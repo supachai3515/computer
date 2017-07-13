@@ -50,7 +50,7 @@ class Backend_order extends BaseController {
 
 
 
-		$data['menu_id'] ='28';
+		$data['menu_id'] ='16';
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 
 		//$data['products_serach'] = $this->backend_order_model->get_products_serach($searchText);
@@ -75,7 +75,7 @@ class Backend_order extends BaseController {
 
 	public function list_temp()
 	{
-		$data['menu_id'] ='28';
+		$data['menu_id'] ='16';
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 		$data['cart_list'] = $this->backend_order_model->get_cart_data();
 		$data['content'] = 'backend_order/backend_order_list_view';
@@ -186,15 +186,6 @@ class Backend_order extends BaseController {
 			redirect('backend_order/list_temp','refresh');
 		}
 
-	}
-
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');
-		}
 	}
 
 }

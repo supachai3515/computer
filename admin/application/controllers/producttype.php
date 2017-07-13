@@ -46,7 +46,7 @@ class Producttype extends BaseController {
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
-        $data['menu_id'] ='6';
+        $data['menu_id'] ='8';
 		$data['content'] = 'producttype';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
@@ -66,7 +66,7 @@ class Producttype extends BaseController {
 		$data['data_search'] = $return_data['data_search'];
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 
-        $data['menu_id'] ='6';
+        $data['menu_id'] ='8';
 		$data['content'] = 'producttype';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
@@ -84,7 +84,7 @@ class Producttype extends BaseController {
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 		$data['producttype_data'] = $this->producttype_model->get_producttype_id($producttype_id);
 		$data['type_list'] = $this->products_model->get_type();
-        $data['menu_id'] ='6';
+        $data['menu_id'] ='8';
 		$data['content'] = 'producttype_edit';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
@@ -124,14 +124,6 @@ class Producttype extends BaseController {
 		}
 		else {
 			redirect('producttype');
-		}
-	}
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');
 		}
 	}
 

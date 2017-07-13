@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH 
 class Account extends BaseController {
 	public function __construct(){
 		parent::__construct();
-		//call model inti 
+		//call model inti
 		$this->load->model('initdata_model');
 		$this->load->model('account_model');
 		$this->load->model('products_model');
@@ -19,7 +19,7 @@ class Account extends BaseController {
 
 		$config['base_url'] = base_url('account/index');
 		$config['total_rows'] = $this->account_model->get_account_count();
-		$config['per_page'] = 10; 
+		$config['per_page'] = 10;
         /* This Application Must Be Used With BootStrap 3 *  */
 		$config['full_tag_open'] = "<ul class='pagination'>";
 		$config['full_tag_close'] ="</ul>";
@@ -38,7 +38,7 @@ class Account extends BaseController {
 		$config['last_tag_open'] = "<li>";
 		$config['last_tagl_close'] = "</li>";
 
-        $this->pagination->initialize($config); 
+        $this->pagination->initialize($config);
 		$data['account_list'] = $this->account_model->get_account($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
@@ -53,7 +53,7 @@ class Account extends BaseController {
 								'description' =>  'account| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
 								'keyword' =>  'cyberbatt');
-		$this->load->view('template/layout', $data);	
+		$this->load->view('template/layout', $data);
 	}
 
 	//page edit
@@ -70,7 +70,7 @@ class Account extends BaseController {
 								'description' =>  'account| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
 								'keyword' =>  'cyberbatt');
-		$this->load->view('template/layout', $data);	
+		$this->load->view('template/layout', $data);
 
 	}
 
@@ -88,8 +88,8 @@ class Account extends BaseController {
 			redirect('account');
 		}
 
-	} 
-	
+	}
+
 	// insert
 	public function add()
 	{
@@ -103,17 +103,8 @@ class Account extends BaseController {
 		}
 		else {
 			redirect('account');
-		}	
+		}
 	}  
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');		
-		}		
-	}
-
 }
 
 /* End of file account.php */

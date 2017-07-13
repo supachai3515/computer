@@ -55,7 +55,7 @@ class Products extends BaseController {
 
 		//call script
 		$data['script_file']= "js/product_add_js";
-        $data['menu_id'] ='5';
+        $data['menu_id'] ='6';
 		$data['content'] = 'products';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),
@@ -66,15 +66,15 @@ class Products extends BaseController {
 	//page edit
 	public function edit($product_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['global'] = $this->global;
+		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 		$data['brands_list'] = $this->products_model->get_brands();
 		$data['type_list'] = $this->products_model->get_type();
 		$data['product_data'] = $this->products_model->get_product($product_id);
 		$data['images_list'] = $this->products_model->get_images($product_id);
 		//call script
 		$data['script_file']= "js/product_js";
-        $data['menu_id'] ='5';
+        $data['menu_id'] ='6';
 		$data['content'] = 'product_edit';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),
@@ -90,13 +90,14 @@ class Products extends BaseController {
 		$data['data_search'] = $return_data['data_search'];
 		$data['sql'] = $return_data['sql'];
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['global'] = $this->global;
+		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 		$data['brands_list'] = $this->products_model->get_brands();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
 		$data['script_file']= "js/product_add_js";
-        $data['menu_id'] ='5';
+        $data['menu_id'] ='6';
 		$data['content'] = 'products';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),
@@ -243,14 +244,6 @@ class Products extends BaseController {
 
 	}
 
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');
-		}
-	}
-
 	public function runimg()
 	{
 
@@ -377,7 +370,7 @@ class Products extends BaseController {
 
 		//call script
 		$data['script_file']= "js/product_add_js";
-        $data['menu_id'] ='5';
+        $data['menu_id'] ='6';
 		$data['content'] = 'products';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),

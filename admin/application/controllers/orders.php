@@ -48,7 +48,7 @@ class Orders extends BaseController {
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 
 		//call script
-        $data['menu_id'] ='10';
+        $data['menu_id'] ='15';
 		$data['content'] = 'orders';
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
@@ -68,7 +68,7 @@ class Orders extends BaseController {
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 		$data['order_status_list'] = $this->orders_model->get_order_status();
 
-        $data['menu_id'] ='10';
+        $data['menu_id'] ='15';
 		$data['content'] = 'orders';
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
@@ -88,7 +88,7 @@ class Orders extends BaseController {
 		$data['order_status_list'] = $this->orders_model->get_order_status();
 		$data['order_status_history_list'] = $this->orders_model->get_order_status_history($orders_id);
 
-        $data['menu_id'] ='10';
+        $data['menu_id'] ='15';
 		$data['content'] = 'orders_edit';
 		$data['script_file']= "js/order_js";
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
@@ -235,15 +235,6 @@ class Orders extends BaseController {
 		$this->load->view('invoice_doc', $data);
 
 	}
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');
-		}
-	}
-
 
 	public function get_product_serial()
 	{

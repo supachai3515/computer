@@ -27,13 +27,13 @@ $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่
 
 
 $config['url_img'] = "http://cyberbatt.com/";
-$config['no_url_img'] = "http://demo.wisadev.com/computer/uploads/no_image.jpg";
+$config['no_url_img'] = "http://computer.wisadev.com/computer/uploads/no_image.jpg";
 
 $config['email_name'] = "computer";
 $config['email_owner'] = "computer_md@hotmail.com";
 $config['email_noreply'] = "computer.fix@gmail.com";
 $config['pass_mail_noreply'] = "0917824565";
-$config['weburl'] = "http://demo.wisadev.com/computer/";
+$config['weburl'] = "http://computer.wisadev.com/computer/";
 $config['line_id'] = "@computer";
 
 $config['payment_transfer'] = '<h4>ธนาคารกรุงเทพ</h4>

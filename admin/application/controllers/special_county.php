@@ -48,7 +48,7 @@ class special_county extends BaseController {
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
-        $data['menu_id'] ='21';
+        $data['menu_id'] ='27';
 		$data['content'] = 'special_county';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'special_county | '.$this->config->item('sitename'),
@@ -70,7 +70,7 @@ class special_county extends BaseController {
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 		$data['province_list'] = $this->products_model->get_province_list();
 
-        $data['menu_id'] ='21';
+        $data['menu_id'] ='27';
 		$data['content'] = 'special_county';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'special_county| '.$this->config->item('sitename'),
@@ -91,7 +91,7 @@ class special_county extends BaseController {
 		$data['shipping_method_list'] = $this->products_model->get_shipping_method();
 		$data['province_list'] = $this->products_model->get_province_list();
 		$data['amphur_list'] = $this->products_model->get_amphur_list_all();
-        $data['menu_id'] ='21';
+        $data['menu_id'] ='27';
 		$data['content'] = 'special_county_edit';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'special_county | '.$this->config->item('sitename'),
@@ -152,14 +152,6 @@ class special_county extends BaseController {
 		$data['amphur_list'] =  $this->products_model->get_amphur_list($value->province_id);
 		print json_encode($data['amphur_list']);
 
-	}
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');
-		}
 	}
 
 }

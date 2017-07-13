@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH 
 class Po_orders extends BaseController {
 	public function __construct(){
 		parent::__construct();
-		//call model inti 
+		//call model inti
 		$this->load->model('initdata_model');
 		$this->load->model('po_orders_model');
 		$this->load->library('pagination');
@@ -18,7 +18,7 @@ class Po_orders extends BaseController {
 
 		$config['base_url'] = base_url('po_orders/index');
 		$config['total_rows'] = $this->po_orders_model->get_po_orders_count();
-		$config['per_page'] = 10; 
+		$config['per_page'] = 10;
         /* This Application Must Be Used With BootStrap 3 *  */
 		$config['full_tag_open'] = "<ul class='pagination'>";
 		$config['full_tag_close'] ="</ul>";
@@ -37,7 +37,7 @@ class Po_orders extends BaseController {
 		$config['last_tag_open'] = "<li>";
 		$config['last_tagl_close'] = "</li>";
 
-        $this->pagination->initialize($config); 
+        $this->pagination->initialize($config);
 		$data['po_orders_list'] = $this->po_orders_model->get_po_orders($page, $config['per_page']);
 		$data['po_order_status_list'] = $this->po_orders_model->get_po_order_status();
 		$data['links_pagination'] = $this->pagination->create_links();
@@ -51,7 +51,7 @@ class Po_orders extends BaseController {
 								'description' =>  'po_orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
 								'keyword' =>  'cyberbatt');
-		$this->load->view('template/layout', $data);	
+		$this->load->view('template/layout', $data);
 	}
 
 
@@ -71,27 +71,26 @@ class Po_orders extends BaseController {
 								'description' =>  'po_orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
 								'keyword' =>  'cyberbatt');
-		$this->load->view('template/layout', $data);	
+		$this->load->view('template/layout', $data);
 
 	}
 
 	//page edit
 	public function edit($po_orders_id)
 	{
-		$this->isLoggedIn();
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 		$data['po_orders_data'] = $this->po_orders_model->get_po_orders_id($po_orders_id);
 		$data['po_orders_detail'] = $this->po_orders_model->get_po_orders_detail_id($po_orders_id);
 		$data['po_order_status_list'] = $this->po_orders_model->get_po_order_status();
 		$data['po_order_status_history_list'] = $this->po_orders_model->get_po_order_status_history($po_orders_id);
-		
+
         $data['menu_id'] ='16';
 		$data['content'] = 'po_orders_edit';
 		$data['header'] = array('title' => 'po_orders| '.$this->config->item('sitename'),
 								'description' =>  'po_orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
 								'keyword' =>  'cyberbatt');
-		$this->load->view('template/layout', $data);	
+		$this->load->view('template/layout', $data);
 
 	}
 
@@ -148,7 +147,7 @@ class Po_orders extends BaseController {
 	            'starttls'  => true,
 	            'newline'   => "\r\n"
 	        );
-	        
+
 	        $this->load->library('email', $email_config);
 
 	        $this->email->from($this->config->item('email_noreply'), $this->config->item('email_name'));
@@ -166,7 +165,7 @@ class Po_orders extends BaseController {
 		}
 
 	}
-	
+
 
 	public function update_tax_info($po_orders_id)
 	{
@@ -253,7 +252,7 @@ class Po_orders extends BaseController {
 		}
 
 	}
-	
+
 	public function update_tracking($po_orders_id)
 	{
 		$this->isLoggedIn();
@@ -277,7 +276,7 @@ class Po_orders extends BaseController {
 	            'starttls'  => true,
 	            'newline'   => "\r\n"
 	        );
-	        
+
 	        $this->load->library('email', $email_config);
 
 	        $this->email->from($this->config->item('email_noreply'), $this->config->item('email_name'));
@@ -316,19 +315,12 @@ class Po_orders extends BaseController {
 			redirect('po_orders');
 		}
 
-	}  
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');		
-		}		
 	}
+
 
 	function sendmail_po_order_tracking($orderId)
 	{
-			
+
 		$result='
 				<table class="main" width="100%" cellpadding="0" cellspacing="0" style="color:#000;">
 				    <tr>
@@ -371,7 +363,7 @@ class Po_orders extends BaseController {
 				        </td>
 				    </tr>
 				</table>
-				'; 
+				';
 
 
 		$sql =" SELECT * FROM  po_orders WHERE id= '".$orderId."' ";
@@ -383,13 +375,13 @@ class Po_orders extends BaseController {
 					<td style="padding-bottom:20px;">
 						<div style="background-color:#c4aa76;color:#fff;padding:20px;">
 					       <h2 class="aligncenter">ทางเราได้จัดส่งสินค้า tracking number : '.$result_order['trackpost'].'</h2>
-					       <p>เลขที่ใบสั่งซื้อ #'.$result_order['invoice_docno'].'<br/> 
+					       <p>เลขที่ใบสั่งซื้อ #'.$result_order['invoice_docno'].'<br/>
 					        วันที่สั่งซื้อ : '.date_format($date1,"d/m/Y H:i").'</p>
 				        </div>
 				    </td>
 		';
 
-	
+
 		$address = '
 				<strong>ชื่อ: </strong>'.$result_order["name"].'<br>
 	            <strong>ที่อยู่: </strong>'.$result_order['address'].'<br>
@@ -453,7 +445,7 @@ class Po_orders extends BaseController {
 
 			$result =  str_replace("@linkstatus", $this->config->item('weburl').'status/'.$result_order['ref_id'],$result);
 			$result =  str_replace("@header",$header_str,$result);
-			$result =  str_replace("@reservations","",$result);	
+			$result =  str_replace("@reservations","",$result);
 			$result =  str_replace("@address",$address,$result);
 			$result =  str_replace("@listOrder",$orderList,$result);
 			$result =  str_replace("@vat",$vatstr,$result);
@@ -465,7 +457,7 @@ class Po_orders extends BaseController {
 
 	function sendmail_update_invoice($orderId)
 	{
-			
+
 		$result='
 				<table class="main" width="100%" cellpadding="0" cellspacing="0" style="color:#000;">
 				    <tr>
@@ -509,7 +501,7 @@ class Po_orders extends BaseController {
 				    </tr>
 				    <tr>
 				        <td>
-				            
+
 				            <h4>วิธีการชำระเงิน และแจ้งการโอนเงิน :</h4>
 				            <p style="text-align:left">
 				            @payment
@@ -518,7 +510,7 @@ class Po_orders extends BaseController {
 				        </td>
 				    </tr>
 				</table>
-				'; 
+				';
 
 
 		$sql =" SELECT * FROM  po_orders WHERE id= '".$orderId."' ";
@@ -530,13 +522,13 @@ class Po_orders extends BaseController {
 					<td style="padding-bottom:20px;">
 						<div style="background-color:#c4aa76;color:#fff;padding:20px;">
 					       <h2 class="aligncenter">เลขที่ใบสั่งซื้อ : #'.$result_order['invoice_docno'].'</h2>
-					       <p>อ้างอิงจากใบเสนอราคา : #'.$orderId.'<br/> 
+					       <p>อ้างอิงจากใบเสนอราคา : #'.$orderId.'<br/>
 					        วันที่เสนอราคา : '.date_format($date1,"d/m/Y H:i").'</p>
 				        </div>
 				    </td>
 		';
 
-	
+
 		$address = '
 				<strong>ชื่อ: </strong>'.$result_order["name"].'<br>
 	            <strong>ที่อยู่: </strong>'.$result_order['address'].'<br>
@@ -601,7 +593,7 @@ class Po_orders extends BaseController {
 			$result =  str_replace("@linkstatus",$this->config->item('weburl').'po_status/'.$result_order['ref_id'],$result);
 			$result =  str_replace("@payment",$this->config->item('payment_transfer'),$result);
 			$result =  str_replace("@header",$header_str,$result);
-			$result =  str_replace("@reservations","",$result);	
+			$result =  str_replace("@reservations","",$result);
 			$result =  str_replace("@address",$address,$result);
 			$result =  str_replace("@listOrder",$orderList,$result);
 			$result =  str_replace("@vat",$vatstr,$result);

@@ -26,14 +26,14 @@ $config['short_sitename'] = "computer";
 $config['sitename'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่งและมือสอง - computer";
 $config['tagline'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่งและมือสอง - computer";
 $config['author'] = "TOS";
-$config['url_img'] = "http://demo.wisadev.com/computer/";
-$config['no_url_img'] = "http://demo.wisadev.com/computer/uploads/no_image.jpg";
+$config['url_img'] = "http://computer.wisadev.com/computer/";
+$config['no_url_img'] = "http://computer.wisadev.com/computer/uploads/no_image.jpg";
 
 $config['email_owner'] = "supachai@wisadev.com";
 $config['email_name'] = "supachai";
 $config['email_noreply'] = "system@wisadev.com";
 $config['pass_mail_noreply'] = "system";
-$config['weburl'] = "http://demo.wisadev.com/computer/";
+$config['weburl'] = "http://computer.wisadev.com/computer/";
 $config['line_id'] = "@computer";
 
 //information

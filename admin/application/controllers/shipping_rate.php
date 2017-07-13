@@ -47,7 +47,7 @@ class Shipping_rate extends BaseController {
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
-        $data['menu_id'] ='20';
+        $data['menu_id'] ='26';
 		$data['content'] = 'shipping_rate';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'shipping_rate | '.$this->config->item('sitename'),
@@ -68,7 +68,7 @@ class Shipping_rate extends BaseController {
 		$data['data_search'] = $return_data['data_search'];
 		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
 
-        $data['menu_id'] ='20';
+        $data['menu_id'] ='26';
 		$data['content'] = 'shipping_rate';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'shipping_rate| '.$this->config->item('sitename'),
@@ -87,7 +87,7 @@ class Shipping_rate extends BaseController {
 		$data['shipping_rate_data'] = $this->shipping_rate_model->get_shipping_rate_id($shipping_rate_id);
 		$data['type_list'] = $this->products_model->get_type();
 		$data['shipping_method_list'] = $this->products_model->get_shipping_method();
-        $data['menu_id'] ='20';
+        $data['menu_id'] ='26';
 		$data['content'] = 'shipping_rate_edit';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'shipping_rate | '.$this->config->item('sitename'),
@@ -127,15 +127,6 @@ class Shipping_rate extends BaseController {
 		}
 		else {
 			redirect('shipping_rate');
-		}
-	}
-
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');
 		}
 	}
 

@@ -220,14 +220,6 @@ class Credit_note extends BaseController {
 	}
 
 
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		$chk_admin =  $this->session->userdata('permission');
-		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
-			redirect('login');
-		}
-	}
-
 }
 
 /* End of file credit_note.php */
