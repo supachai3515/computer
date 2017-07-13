@@ -74,7 +74,7 @@ class Products extends BaseController {
 		$data['images_list'] = $this->products_model->get_images($product_id);
 		//call script
 		$data['script_file']= "js/product_js";
-        $data['menu_id'] ='6';
+    $data['menu_id'] ='6';
 		$data['content'] = 'product_edit';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),
