@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Receive extends BaseController {
+class Receive extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class Receive extends BaseController {
 		$this->load->model('receive_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -42,7 +42,7 @@ class Receive extends BaseController {
 		$data['receive_list'] = $this->receive_model->get_receive($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
@@ -52,7 +52,7 @@ class Receive extends BaseController {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -64,7 +64,7 @@ class Receive extends BaseController {
 		$return_data = $this->receive_model->get_receive_search();
 		$data['receive_list'] = $return_data['result_receive'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
         $data['menu_id'] ='23';
 		$data['content'] = 'receive';
@@ -72,7 +72,7 @@ class Receive extends BaseController {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -80,8 +80,8 @@ class Receive extends BaseController {
 	//page edit
 	public function edit($receive_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['receive_data'] = $this->receive_model->get_receive_id($receive_id);
 		$data['type_list'] = $this->products_model->get_type();
         $data['menu_id'] ='23';
@@ -90,7 +90,7 @@ class Receive extends BaseController {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 
 		if($data['receive_data']['count_use'] < 1){
 			$this->load->view('template/layout', $data);
@@ -104,8 +104,8 @@ class Receive extends BaseController {
 
 	public function edit_view($receive_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['receive_data'] = $this->receive_model->get_receive_id($receive_id);
 		$data['type_list'] = $this->products_model->get_type();
         $data['menu_id'] ='23';
@@ -117,8 +117,8 @@ class Receive extends BaseController {
 		//page edit
 	public function edit_serial($receive_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['receive_data'] = $this->receive_model->get_receive_id($receive_id);
 		$data['type_list'] = $this->products_model->get_type();
         $data['menu_id'] ='23';
@@ -127,7 +127,7 @@ class Receive extends BaseController {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -336,6 +336,15 @@ class Receive extends BaseController {
 			$i++;
 
 			}
+		}
+	}
+
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
 		}
 	}
 

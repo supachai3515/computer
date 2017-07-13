@@ -10,7 +10,7 @@ class Payment extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('my_upload');
 		$this->load->library('upload');
-		 session_start();
+		 
 	}
 
 	public function index()

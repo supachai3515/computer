@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Backend_order extends BaseController {
+class Backend_order extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -10,7 +10,7 @@ class Backend_order extends BaseController {
 		$this->load->model('backend_order_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -50,15 +50,15 @@ class Backend_order extends BaseController {
 
 
 
-		$data['menu_id'] ='16';
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menu_id'] ='28';
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
 		//$data['products_serach'] = $this->backend_order_model->get_products_serach($searchText);
 		$data['content'] = 'backend_order/backend_order_view';
 		$data['header'] = array('title' => 'backend order | '.$this->config->item('sitename'),
 								'description' =>  'backend order | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -75,14 +75,14 @@ class Backend_order extends BaseController {
 
 	public function list_temp()
 	{
-		$data['menu_id'] ='16';
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menu_id'] ='28';
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['cart_list'] = $this->backend_order_model->get_cart_data();
 		$data['content'] = 'backend_order/backend_order_list_view';
 		$data['header'] = array('title' => 'backend order | '.$this->config->item('sitename'),
 								'description' =>  'backend order | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -121,7 +121,7 @@ class Backend_order extends BaseController {
 				$total  = $total + $shipping_charge;
 
 				$this->db->trans_begin();
-				$ref_order_id = md5("cyberbatt".date("YmdHis")."cyberbatt_gen");
+				$ref_order_id = md5("computer".date("YmdHis")."computer_gen");
 				$order_id="";
 				if($quantity == 0){
 					redirect('backend_order/list_temp','refresh');
@@ -186,6 +186,15 @@ class Backend_order extends BaseController {
 			redirect('backend_order/list_temp','refresh');
 		}
 
+	}
+
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
 	}
 
 }

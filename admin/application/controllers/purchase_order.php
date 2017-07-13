@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Purchase_order extends BaseController {
+class Purchase_order extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class Purchase_order extends BaseController {
 		$this->load->model('purchase_order_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -44,7 +44,7 @@ class Purchase_order extends BaseController {
 		$data['purchase_order_list'] = $this->purchase_order_model->get_purchase_order( $searchText, $page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
@@ -54,7 +54,7 @@ class Purchase_order extends BaseController {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -62,8 +62,8 @@ class Purchase_order extends BaseController {
 	//page edit
 	public function view($purchase_order_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['purchase_order_data'] = $this->purchase_order_model->get_purchase_order_id($purchase_order_id);
 		$data['purchase_order_detail_data'] = $this->purchase_order_model->get_purchase_order_detail($purchase_order_id);
 		$data['type_list'] = $this->products_model->get_type();
@@ -73,7 +73,7 @@ class Purchase_order extends BaseController {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 
 	$this->load->view('purchase_order/purchase_order_info_view', $data);
 	}
@@ -83,7 +83,7 @@ class Purchase_order extends BaseController {
 	public function add()
 	{
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
@@ -94,7 +94,7 @@ class Purchase_order extends BaseController {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -102,8 +102,8 @@ class Purchase_order extends BaseController {
 	//page edit
 	public function edit($purchase_order_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['purchase_order_data'] = $this->purchase_order_model->get_purchase_order_id($purchase_order_id);
 		$data['type_list'] = $this->products_model->get_type();
         $data['menu_id'] ='34';
@@ -112,7 +112,7 @@ class Purchase_order extends BaseController {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 
 			$this->load->view('template/layout', $data);
 	}
@@ -137,7 +137,7 @@ class Purchase_order extends BaseController {
 	public function transfer_save($purchase_order_id)
 	{
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['purchase_order_data'] = $this->purchase_order_model->get_purchase_order_id($purchase_order_id);
 		$data['type_list'] = $this->products_model->get_type();
 				$data['menu_id'] ='34';
@@ -146,7 +146,7 @@ class Purchase_order extends BaseController {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 
 			$this->load->view('template/layout', $data);
 
@@ -211,6 +211,15 @@ class Purchase_order extends BaseController {
 			$i++;
 
 			}
+		}
+	}
+
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
 		}
 	}
 

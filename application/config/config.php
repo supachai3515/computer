@@ -26,14 +26,14 @@ $config['author'] = "computer (ไซเบอร์ แบต)";
 $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
 
-$config['url_img'] = "http://cyberbatt.com/";
-$config['no_url_img'] = "http://computer.wisadev.com/computer/uploads/no_image.jpg";
+$config['url_img'] = "http://computer.wisadev.com/";
+$config['no_url_img'] = "http://computer.wisadev.com/uploads/no_image.jpg";
 
 $config['email_name'] = "computer";
 $config['email_owner'] = "computer_md@hotmail.com";
 $config['email_noreply'] = "computer.fix@gmail.com";
 $config['pass_mail_noreply'] = "0917824565";
-$config['weburl'] = "http://computer.wisadev.com/computer/";
+$config['weburl'] = "http://computer.wisadev.com/";
 $config['line_id'] = "@computer";
 
 $config['payment_transfer'] = '<h4>ธนาคารกรุงเทพ</h4>

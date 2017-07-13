@@ -1,9 +1,8 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-require APPPATH . '/libraries/BaseController.php';
 
-class Rest_server extends BaseController {
+class Rest_server extends CI_Controller {
 
     public function index()
     {

@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Producttype extends BaseController {
+class Producttype extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class Producttype extends BaseController {
 		$this->load->model('producttype_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -42,17 +42,17 @@ class Producttype extends BaseController {
 		$data['producttype_list'] = $this->producttype_model->get_producttype($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
-        $data['menu_id'] ='8';
+        $data['menu_id'] ='6';
 		$data['content'] = 'producttype';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
 								'description' =>  'producttype| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -64,15 +64,15 @@ class Producttype extends BaseController {
 		$return_data = $this->producttype_model->get_producttype_search();
 		$data['producttype_list'] = $return_data['result_producttype'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
-        $data['menu_id'] ='8';
+        $data['menu_id'] ='6';
 		$data['content'] = 'producttype';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
 								'description' =>  'producttype| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -80,17 +80,17 @@ class Producttype extends BaseController {
 	//page edit
 	public function edit($producttype_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['producttype_data'] = $this->producttype_model->get_producttype_id($producttype_id);
 		$data['type_list'] = $this->products_model->get_type();
-        $data['menu_id'] ='8';
+        $data['menu_id'] ='6';
 		$data['content'] = 'producttype_edit';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
 								'description' =>  'producttype| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -124,6 +124,14 @@ class Producttype extends BaseController {
 		}
 		else {
 			redirect('producttype');
+		}
+	}
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
 		}
 	}
 

@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class delivery_return extends BaseController {
+class delivery_return extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class delivery_return extends BaseController {
 		$this->load->model('delivery_return_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -42,7 +42,7 @@ class delivery_return extends BaseController {
 		$data['delivery_return_list'] = $this->delivery_return_model->get_delivery_return($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
@@ -52,7 +52,7 @@ class delivery_return extends BaseController {
 		$data['header'] = array('title' => 'delivery_return| '.$this->config->item('sitename'),
 								'description' =>  'delivery_return| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -64,7 +64,7 @@ class delivery_return extends BaseController {
 		$return_data = $this->delivery_return_model->get_delivery_return_search();
 		$data['delivery_return_list'] = $return_data['result_delivery_return'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
         $data['menu_id'] ='27';
 		$data['content'] = 'delivery_return';
@@ -72,7 +72,7 @@ class delivery_return extends BaseController {
 		$data['header'] = array('title' => 'delivery_return| '.$this->config->item('sitename'),
 								'description' =>  'delivery_return| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -80,8 +80,8 @@ class delivery_return extends BaseController {
 	//page edit
 	public function edit($delivery_return_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['delivery_return_data'] = $this->delivery_return_model->get_delivery_return_id($delivery_return_id);
 		$data['type_list'] = $this->products_model->get_type();
         $data['menu_id'] ='27';
@@ -90,7 +90,7 @@ class delivery_return extends BaseController {
 		$data['header'] = array('title' => 'delivery_return| '.$this->config->item('sitename'),
 								'description' =>  'delivery_return| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -134,6 +134,15 @@ class delivery_return extends BaseController {
 		$data['search_order'] =  $this->delivery_return_model->get_search_order($value->search);
 		print json_encode($data['search_order']);
 
+	}
+
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
 	}
 
 }

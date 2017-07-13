@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Shipping_method extends BaseController {
+class Shipping_method extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class Shipping_method extends BaseController {
 		$this->load->model('shipping_method_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -42,17 +42,17 @@ class Shipping_method extends BaseController {
 		$data['shipping_method_list'] = $this->shipping_method_model->get_shipping_method($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
-        $data['menu_id'] ='25';
+        $data['menu_id'] ='19';
 		$data['content'] = 'shipping_method';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'shipping_method| '.$this->config->item('sitename'),
 								'description' =>  'shipping_method| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -64,15 +64,15 @@ class Shipping_method extends BaseController {
 		$return_data = $this->shipping_method_model->get_shipping_method_search();
 		$data['shipping_method_list'] = $return_data['result_shipping_method'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
-        $data['menu_id'] ='25';
+        $data['menu_id'] ='19';
 		$data['content'] = 'shipping_method';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'shipping_method| '.$this->config->item('sitename'),
 								'description' =>  'shipping_method| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -80,17 +80,17 @@ class Shipping_method extends BaseController {
 	//page edit
 	public function edit($shipping_method_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['shipping_method_data'] = $this->shipping_method_model->get_shipping_method_id($shipping_method_id);
 		$data['type_list'] = $this->products_model->get_type();
-        $data['menu_id'] ='25';
+        $data['menu_id'] ='19';
 		$data['content'] = 'shipping_method_edit';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'shipping_method| '.$this->config->item('sitename'),
 								'description' =>  'shipping_method| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -127,6 +127,13 @@ class Shipping_method extends BaseController {
 		}
 	}
 
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
+	}
 
 }
 

@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Product_serial extends BaseController {
+class Product_serial extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class Product_serial extends BaseController {
 		$this->load->model('product_serial_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -42,7 +42,7 @@ class Product_serial extends BaseController {
 		$data['product_serial_list'] = $this->product_serial_model->get_product_serial($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
@@ -52,7 +52,7 @@ class Product_serial extends BaseController {
 		$data['header'] = array('title' => 'product_serial| '.$this->config->item('sitename'),
 								'description' =>  'product_serial| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -63,7 +63,7 @@ class Product_serial extends BaseController {
 		$return_data = $this->product_serial_model->get_product_serial_search();
 		$data['product_serial_list'] = $return_data['result_product_serial'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
         $data['menu_id'] ='24';
 		$data['content'] = 'product_serial';
@@ -71,7 +71,7 @@ class Product_serial extends BaseController {
 		$data['header'] = array('title' => 'product_serial| '.$this->config->item('sitename'),
 								'description' =>  'product_serial| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -84,6 +84,14 @@ class Product_serial extends BaseController {
 
 	}
 
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
+	}
 
 }
 

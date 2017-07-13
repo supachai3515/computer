@@ -1,14 +1,14 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Members extends BaseController {
+class Members extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
 		$this->load->model('initdata_model');
 		$this->load->model('members_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -41,7 +41,7 @@ class Members extends BaseController {
 		$data['members_list'] = $this->members_model->get_members($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
 		//call script
 		$data['script_file']= "js/product_add_js";
@@ -50,7 +50,7 @@ class Members extends BaseController {
 		$data['header'] = array('title' => 'members | '.$this->config->item('sitename'),
 								'description' =>  'members | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -61,14 +61,14 @@ class Members extends BaseController {
 		$return_data = $this->members_model->get_members_search();
 		$data['members_list'] = $return_data['result_members'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
         $data['menu_id'] ='9';
 		$data['content'] = 'members';
 		$data['header'] = array('title' => 'members | '.$this->config->item('sitename'),
 								'description' =>  'members | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -76,15 +76,15 @@ class Members extends BaseController {
 	//page edit
 	public function edit($member_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['member_data'] = $this->members_model->get_member($member_id);
         $data['menu_id'] ='9';
 		$data['content'] = 'members_edit';
 		$data['header'] = array('title' => 'members | '.$this->config->item('sitename'),
 								'description' =>  'members | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -158,6 +158,15 @@ class Members extends BaseController {
 		}
 
 
+	}
+
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
 	}
 
 }

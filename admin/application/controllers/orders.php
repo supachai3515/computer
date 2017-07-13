@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Orders extends BaseController {
+class Orders extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -11,7 +11,7 @@ class Orders extends BaseController {
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('my_upload');
 		$this->load->library('upload');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -45,15 +45,15 @@ class Orders extends BaseController {
 		$data['order_status_list'] = $this->orders_model->get_order_status();
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
 		//call script
-        $data['menu_id'] ='15';
+        $data['menu_id'] ='10';
 		$data['content'] = 'orders';
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -65,15 +65,15 @@ class Orders extends BaseController {
 		$return_data = $this->orders_model->get_orders_search();
 		$data['orders_list'] = $return_data['result_orders'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['order_status_list'] = $this->orders_model->get_order_status();
 
-        $data['menu_id'] ='15';
+        $data['menu_id'] ='10';
 		$data['content'] = 'orders';
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -81,20 +81,20 @@ class Orders extends BaseController {
 	//page edit
 	public function edit($orders_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['orders_data'] = $this->orders_model->get_orders_id($orders_id);
 		$data['orders_detail'] = $this->orders_model->get_orders_detail_id($orders_id);
 		$data['order_status_list'] = $this->orders_model->get_order_status();
 		$data['order_status_history_list'] = $this->orders_model->get_order_status_history($orders_id);
 
-        $data['menu_id'] ='15';
+        $data['menu_id'] ='10';
 		$data['content'] = 'orders_edit';
 		$data['script_file']= "js/order_js";
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -103,7 +103,7 @@ class Orders extends BaseController {
    //update status order
 	public function update_status($orders_id)
 	{
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 		$this->orders_model->update_status($orders_id);
 
@@ -118,7 +118,7 @@ class Orders extends BaseController {
 
 	public function update_tracking($orders_id)
 	{
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 		$this->orders_model->update_tracking($orders_id);
 		$this->orders_model->update_status($orders_id);
@@ -203,7 +203,7 @@ class Orders extends BaseController {
 
 	public function invoice($orders_id,$print_f = 0)
 	{
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 		$data['print_f'] = $print_f;
 		$data['orders_tem'] = $this->orders_model->get_orders_id($orders_id);
@@ -235,6 +235,15 @@ class Orders extends BaseController {
 		$this->load->view('invoice_doc', $data);
 
 	}
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
+	}
+
 
 	public function get_product_serial()
 	{

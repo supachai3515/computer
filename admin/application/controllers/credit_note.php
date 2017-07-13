@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Credit_note extends BaseController {
+class Credit_note extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -10,7 +10,7 @@ class Credit_note extends BaseController {
 		$this->load->model('products_model');
 		$this->load->library('pagination');
 		$this->load->library('my_upload');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -43,7 +43,7 @@ class Credit_note extends BaseController {
 		$data['credit_note_list'] = $this->credit_note_model->get_credit_note($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
@@ -53,7 +53,7 @@ class Credit_note extends BaseController {
 		$data['header'] = array('title' => 'credit_note| '.$this->config->item('sitename'),
 								'description' =>  'credit_note| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -65,7 +65,7 @@ class Credit_note extends BaseController {
 		$return_data = $this->credit_note_model->get_credit_note_search();
 		$data['credit_note_list'] = $return_data['result_credit_note'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
         $data['menu_id'] ='26';
 		$data['content'] = 'credit_note';
@@ -73,7 +73,7 @@ class Credit_note extends BaseController {
 		$data['header'] = array('title' => 'credit_note| '.$this->config->item('sitename'),
 								'description' =>  'credit_note| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -81,8 +81,8 @@ class Credit_note extends BaseController {
 	//page edit
 	public function edit($credit_note_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['credit_note_data'] = $this->credit_note_model->get_credit_note_id($credit_note_id);
 		$data['credit_note_detail'] = $this->credit_note_model->get_credit_note_detail($credit_note_id);
 		$data['type_list'] = $this->products_model->get_type();
@@ -92,16 +92,16 @@ class Credit_note extends BaseController {
 		$data['header'] = array('title' => 'credit_note| '.$this->config->item('sitename'),
 								'description' =>  'credit_note| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
 
 	public function edit_view($credit_note_id,$print_f = 0)
 	{
-		$this->isLoggedIn();
+		$this->is_logged_in();
 		$data['print_f'] = $print_f;
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['credit_note_data'] = $this->credit_note_model->get_credit_note_id($credit_note_id);
 		$data['credit_note_detail'] = $this->credit_note_model->get_credit_note_detail($credit_note_id);
 		$data['type_list'] = $this->products_model->get_type();
@@ -219,6 +219,14 @@ class Credit_note extends BaseController {
 
 	}
 
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
+	}
 
 }
 

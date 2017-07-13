@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class special_county extends BaseController {
+class special_county extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class special_county extends BaseController {
 		$this->load->model('special_county_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -44,17 +44,17 @@ class special_county extends BaseController {
 		$data['province_list'] = $this->products_model->get_province_list();
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
-        $data['menu_id'] ='27';
+        $data['menu_id'] ='21';
 		$data['content'] = 'special_county';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'special_county | '.$this->config->item('sitename'),
 								'description' =>  'special_county| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -67,16 +67,16 @@ class special_county extends BaseController {
 		$data['special_county_list'] = $return_data['result_special_county'];
 		$data['shipping_method_list'] = $this->products_model->get_shipping_method();
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['province_list'] = $this->products_model->get_province_list();
 
-        $data['menu_id'] ='27';
+        $data['menu_id'] ='21';
 		$data['content'] = 'special_county';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'special_county| '.$this->config->item('sitename'),
 								'description' =>  'special_county| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -84,20 +84,20 @@ class special_county extends BaseController {
 	//page edit
 	public function edit($amphur_id,$shipping_method_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['special_county_data'] = $this->special_county_model->get_special_county_id($amphur_id,$shipping_method_id);
 		$data['type_list'] = $this->products_model->get_type();
 		$data['shipping_method_list'] = $this->products_model->get_shipping_method();
 		$data['province_list'] = $this->products_model->get_province_list();
 		$data['amphur_list'] = $this->products_model->get_amphur_list_all();
-        $data['menu_id'] ='27';
+        $data['menu_id'] ='21';
 		$data['content'] = 'special_county_edit';
 		$data['script_file']= "js/product_add_js";
 		$data['header'] = array('title' => 'special_county | '.$this->config->item('sitename'),
 								'description' =>  'special_county| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -152,6 +152,14 @@ class special_county extends BaseController {
 		$data['amphur_list'] =  $this->products_model->get_amphur_list($value->province_id);
 		print json_encode($data['amphur_list']);
 
+	}
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
 	}
 
 }

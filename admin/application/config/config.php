@@ -10,34 +10,31 @@
 |
 |	http://example.com/
 |
-| If this is not set then CodeIgniter will try to guess the protocol, domain
-| and path to your installation. However, you should always configure this
-| explicitly and never rely on auto-guessing, especially in production
-| environments.
+| If this is not set then CodeIgniter will guess the protocol, domain and
+| path to your installation.
 |
 */
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
-
 //Config by user
-$config['short_sitename'] = "computer";
-$config['sitename'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่งและมือสอง - computer";
-$config['tagline'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่งและมือสอง - computer";
-$config['author'] = "TOS";
-$config['url_img'] = "http://computer.wisadev.com/computer/";
-$config['no_url_img'] = "http://computer.wisadev.com/computer/uploads/no_image.jpg";
+$config['short_sitename'] = "computer (ไซเบอร์ แบต)";
+$config['sitename'] = "อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน แบต จอ คีบอร์ด - computer";
+$config['tagline'] = "อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน จอแมคบุ๊ค จอไอแมค จอไอโฟน  แบตเตอรี่โน๊ตบุ๊ค แบตเตอรี่แมคบุ๊ค แบตเตอรี่ไอโฟน  ครบวงจร";
+$config['author'] = "computer (ไซเบอร์ แบต)";
+$config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
-$config['email_owner'] = "supachai@wisadev.com";
-$config['email_name'] = "supachai";
-$config['email_noreply'] = "system@wisadev.com";
-$config['pass_mail_noreply'] = "system";
-$config['weburl'] = "http://computer.wisadev.com/computer/";
+
+$config['url_img'] = "http://computer.wisadev.com/";
+$config['no_url_img'] = "http://computer.wisadev.com/uploads/no_image.jpg";
+
+$config['email_name'] = "computer";
+$config['email_owner'] = "computer_md@hotmail.com";
+$config['email_noreply'] = "computer.fix@gmail.com";
+$config['pass_mail_noreply'] = "0917824565";
+$config['weburl'] = "http://computer.wisadev.com/";
 $config['line_id'] = "@computer";
-
-//information
-$config['pre_page'] = "10";
 
 $config['payment_transfer'] = '<h4>ธนาคารกรุงเทพ</h4>
 								<p>เลขที่บัญชี : <strong>087-3-00208-3</strong> บริษัท ไชเบอร์ แบต จำกัด</p>
@@ -258,7 +255,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'asjkrue*$djasfl134213';
+$config['encryption_key'] = 'k152qkFSaX2rNt6c2yZrEaQOAPtskF7u';
 
 /*
 |--------------------------------------------------------------------------
@@ -313,7 +310,7 @@ $config['cookie_secure']	= FALSE;
 | COOKIE data is encountered
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------

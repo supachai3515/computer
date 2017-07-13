@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Products extends BaseController {
+class Products extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class Products extends BaseController {
 		$this->load->model('products_model');
 		$this->load->library('my_upload');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -44,7 +44,7 @@ class Products extends BaseController {
 
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['brands_list'] = $this->products_model->get_brands();
 		$data['type_list'] = $this->products_model->get_type();
 
@@ -55,7 +55,7 @@ class Products extends BaseController {
 
 		//call script
 		$data['script_file']= "js/product_add_js";
-        $data['menu_id'] ='6';
+        $data['menu_id'] ='5';
 		$data['content'] = 'products';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),
@@ -66,15 +66,15 @@ class Products extends BaseController {
 	//page edit
 	public function edit($product_id)
 	{
-		$data['global'] = $this->global;
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['brands_list'] = $this->products_model->get_brands();
 		$data['type_list'] = $this->products_model->get_type();
 		$data['product_data'] = $this->products_model->get_product($product_id);
 		$data['images_list'] = $this->products_model->get_images($product_id);
 		//call script
 		$data['script_file']= "js/product_js";
-    $data['menu_id'] ='6';
+        $data['menu_id'] ='5';
 		$data['content'] = 'product_edit';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),
@@ -90,14 +90,13 @@ class Products extends BaseController {
 		$data['data_search'] = $return_data['data_search'];
 		$data['sql'] = $return_data['sql'];
 
-		$data['global'] = $this->global;
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['brands_list'] = $this->products_model->get_brands();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
 		$data['script_file']= "js/product_add_js";
-        $data['menu_id'] ='6';
+        $data['menu_id'] ='5';
 		$data['content'] = 'products';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),
@@ -244,6 +243,14 @@ class Products extends BaseController {
 
 	}
 
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
+		}
+	}
+
 	public function runimg()
 	{
 
@@ -364,13 +371,13 @@ class Products extends BaseController {
 				$data['products_list'] = $this->products_model->get_products_in($in_str);
 		}
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['brands_list'] = $this->products_model->get_brands();
 		$data['type_list'] = $this->products_model->get_type();
 
 		//call script
 		$data['script_file']= "js/product_add_js";
-        $data['menu_id'] ='6';
+        $data['menu_id'] ='5';
 		$data['content'] = 'products';
 		$data['header'] = array('title' => 'Products | '.$this->config->item('sitename'),
 								'description' =>  'Products | '.$this->config->item('tagline'),

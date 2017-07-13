@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Productbrand extends BaseController {
+class Productbrand extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//call model inti
@@ -9,7 +9,7 @@ class Productbrand extends BaseController {
 		$this->load->model('productbrand_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -42,7 +42,7 @@ class Productbrand extends BaseController {
 		$data['productbrand_list'] = $this->productbrand_model->get_productbrand($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
 		//call script
         $data['menu_id'] ='7';
@@ -51,7 +51,7 @@ class Productbrand extends BaseController {
 		$data['header'] = array('title' => 'productbrand| '.$this->config->item('sitename'),
 								'description' =>  'productbrand| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -63,7 +63,7 @@ class Productbrand extends BaseController {
 		$return_data = $this->productbrand_model->get_productbrand_search();
 		$data['productbrand_list'] = $return_data['result_productbrand'];
 		$data['data_search'] = $return_data['data_search'];
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
         $data['menu_id'] ='7';
 		$data['content'] = 'productbrand';
@@ -71,7 +71,7 @@ class Productbrand extends BaseController {
 		$data['header'] = array('title' => 'productbrand| '.$this->config->item('sitename'),
 								'description' =>  'productbrand| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -79,8 +79,8 @@ class Productbrand extends BaseController {
 	//page edit
 	public function edit($productbrand_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['productbrand_data'] = $this->productbrand_model->get_productbrand_id($productbrand_id);
         $data['menu_id'] ='7';
 		$data['content'] = 'productbrand_edit';
@@ -88,7 +88,7 @@ class Productbrand extends BaseController {
 		$data['header'] = array('title' => 'productbrand| '.$this->config->item('sitename'),
 								'description' =>  'productbrand| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
+								'keyword' =>  'computer');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -122,6 +122,14 @@ class Productbrand extends BaseController {
 		}
 		else {
 			redirect('productbrand');
+		}
+	}
+
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');
 		}
 	}
 

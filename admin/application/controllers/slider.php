@@ -1,14 +1,14 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed'); require APPPATH . '/libraries/BaseController.php';
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Slider extends BaseController {
+class Slider extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		//call model inti
+		//call model inti 
 		$this->load->model('initdata_model');
 		$this->load->model('slider_model');
 		$this->load->library('pagination');
-		$this->isLoggedIn();
+		$this->is_logged_in();
 
 	}
 
@@ -18,7 +18,7 @@ class Slider extends BaseController {
 
 		$config['base_url'] = base_url('slider/index');
 		$config['total_rows'] = $this->slider_model->get_slider_count();
-		$config['per_page'] = 10;
+		$config['per_page'] = 10; 
         /* This Application Must Be Used With BootStrap 3 *  */
 		$config['full_tag_open'] = "<ul class='pagination'>";
 		$config['full_tag_close'] ="</ul>";
@@ -37,36 +37,36 @@ class Slider extends BaseController {
 		$config['last_tag_open'] = "<li>";
 		$config['last_tagl_close'] = "</li>";
 
-        $this->pagination->initialize($config);
+        $this->pagination->initialize($config); 
 		$data['slider_list'] = $this->slider_model->get_slider($page, $config['per_page']);
 		$data['links_pagination'] = $this->pagination->create_links();
 
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$data['menus_list'] = $this->initdata_model->get_menu();
 
 		//call script
-        $data['menu_id'] ='29';
+        $data['menu_id'] ='15';
 		$data['content'] = 'slider';
 		$data['header'] = array('title' => 'slider | '.$this->config->item('sitename'),
 								'description' =>  'slider | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
-		$this->load->view('template/layout', $data);
+								'keyword' =>  'computer');
+		$this->load->view('template/layout', $data);	
 	}
 
 
 	//page edit
 	public function edit($slider_id)
 	{
-		$this->isLoggedIn();
-		$data['global'] = $this->global; $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+		$this->is_logged_in();
+		$data['menus_list'] = $this->initdata_model->get_menu();
 		$data['slider_data'] = $this->slider_model->get_slider_id($slider_id);
-        $data['menu_id'] ='29';
+        $data['menu_id'] ='15';
 		$data['content'] = 'slider_edit';
 		$data['header'] = array('title' => 'slider | '.$this->config->item('sitename'),
 								'description' =>  'slider | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'cyberbatt');
-		$this->load->view('template/layout', $data);
+								'keyword' =>  'computer');
+		$this->load->view('template/layout', $data);	
 
 	}
 
@@ -84,8 +84,15 @@ class Slider extends BaseController {
 			redirect('slider');
 		}
 
-	}
+	}  
 
+	public function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		$chk_admin =  $this->session->userdata('permission');
+		if(!isset($is_logged_in) || $is_logged_in != true || $chk_admin !='admin'){
+			redirect('login');		
+		}		
+	}
 
 }
 
