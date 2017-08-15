@@ -203,7 +203,6 @@
                     </div>
                 </div>
                 <!-- new-arrival-tab-area end-->
-
                 <!-- new-arrival-tab-area start-->
                 <div class="product-tab-area-3">
                     <div class="row">

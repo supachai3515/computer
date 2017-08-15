@@ -9,7 +9,7 @@ class Home extends CI_Controller {
 		$this->load->model('home_model');
 		$this->load->model('products_model');
 		$this->load->library('pagination');
-		 
+
 	}
 
 	public function index()
@@ -39,7 +39,7 @@ class Home extends CI_Controller {
 		$data['product_hot'] = $this->home_model->get_products_hot();//ได้รับความนิยม
 		$data['product_sale'] = $this->home_model->get_products_sale();//แนะนำ
 		$data['product_promotion'] = $this->home_model->get_products_promotion();//ลดราคา
-		$data['content_wordpress'] = $this->home_model->get_content_wordpress();
+		//$data['content_wordpress'] = $this->home_model->get_content_wordpress();
 
         //content file view
 		$data['content'] = 'home';

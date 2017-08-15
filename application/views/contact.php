@@ -14,7 +14,7 @@
             <div class="col-sm-12 col-lg-12 col-md-12">
                 <div class="our-team">
                     <h2 class="sub-section-title">
-                        computer (computer.com)
+                        xcitehitec (เอ็กไซ ไฮเทค)
                     </h2>
                     <address>
                         <p><i class="fa fa-map-marker"></i>  บริษัท เอ็กไซ ไฮเทค จำกัด <br>ห้อง 3R036-037 ชั้น 3 ตึกคอมโฆษะขอนแก่น ถนนศรีจันทร์  ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000</p>

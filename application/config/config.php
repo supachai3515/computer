@@ -19,34 +19,26 @@ $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
 //Config by user
-$config['short_sitename'] = "computer (ไซเบอร์ แบต)";
-$config['sitename'] = "อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน แบต จอ คีบอร์ด - computer";
+$config['short_sitename'] = "xcitehitec (เอ็กไซ ไฮเทค)";
+$config['sitename'] = "อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน แบต จอ คีบอร์ด - xcitehitec";
 $config['tagline'] = "อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน จอแมคบุ๊ค จอไอแมค จอไอโฟน  แบตเตอรี่โน๊ตบุ๊ค แบตเตอรี่แมคบุ๊ค แบตเตอรี่ไอโฟน  ครบวงจร";
-$config['author'] = "computer (ไซเบอร์ แบต)";
+$config['author'] = "xcitehitec (เอ็กไซ ไฮเทค)";
 $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
 
 $config['url_img'] = "http://computer.wisadev.com/";
 $config['no_url_img'] = "http://computer.wisadev.com/uploads/no_image.jpg";
 
-$config['email_name'] = "computer";
-$config['email_owner'] = "computer_md@hotmail.com";
-$config['email_noreply'] = "computer.fix@gmail.com";
+$config['email_name'] = "xcitehitec";
+$config['email_owner'] = "xcitehitec@hotmail.com";
+$config['email_noreply'] = "xcitehitec.fix@gmail.com";
 $config['pass_mail_noreply'] = "0917824565";
 $config['weburl'] = "http://computer.wisadev.com/";
 $config['line_id'] = "@computer";
 
-$config['payment_transfer'] = '<h4>ธนาคารกรุงเทพ</h4>
-								<p>เลขที่บัญชี : <strong>087-3-00208-3</strong> บริษัท ไชเบอร์ แบต จำกัด</p>
-								<h4>ธนาคารไทยพาณิชย์</h4>
-								<p>เลขที่บัญชี : <strong>403-8-25867-1</strong> บริษัท ไชเบอร์ แบต จำกัด</p>
-								<h4>ธนาคารกสิกร</h4>
-								<p>เลขที่บัญชี : <strong>996-2-05800-8</strong> บริษัท ไชเบอร์ แบต จำกัด</p>
-								<h4>ธนากรุงไทย</h4>
-								<p>เลขที่บัญชี : <strong>981-7-80914-5</strong> บริษัท ไชเบอร์ แบต จำกัด</p>
-
+$config['payment_transfer'] = '<h4>ธนาคารไทยพาณิชย์</h4>
+								<p>เลขที่บัญชี : <strong>935-229047-8</strong> บริษัท เอ็กไซ ไฮเทค จำกัด</p>
 								';
-
 /*
 |--------------------------------------------------------------------------
 | Index File

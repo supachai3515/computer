@@ -41,9 +41,9 @@
                                 </div>
                                 <div class="store-content">
                                     <ul>
-                                       <li><i class="fa fa-map-marker"></i>  บริษัท ไชเบอร์ แบต จำกัด <br>
-                                       2963 ซ.ลาดพร้าว 101/2 ถ.ลาดพร้าว คลองจั่น บางกะปิ กทม. 10240 </li>
-                                       <li><i class="fa fa-phone"></i> Mobile: 091-7824565 , 02-7313565</li>
+                                       <li><i class="fa fa-map-marker"></i> บริษัท เอ็กไซ ไฮเทค จำกัด<br>
+                                       ชั้น 3 ตึกคอมโฆษะขอนแก่น อำเภอเมือง ขอนแก่น 40000 </li>
+                                       <li><i class="fa fa-phone"></i> Mobile: 087-880964 , 043-389438</li>
                                        <li><i class="fa fa-comment"></i> LINE : @xcitehitec</li>
                                     </ul>
                                 </div>
@@ -52,15 +52,15 @@
                         <div class="col-sm-3 col-lg-3 col-md-3">
                             <div class="store-information-area">
                                 <div class="footer-title">
-                                    <h2>เวลาทำการ computer</h2>
+                                    <h2>เวลาทำการ xcitehitec</h2>
                                 </div>
                                 <div class="store-content">
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> ทุกวัน จันทร์ - เสาร์ 9.30 - 19.00 น.</li>
+                                        <li><i class="fa fa-clock-o"></i> ทุกวัน จันทร์ - เสาร์ 9.30 - 19.00</li>
                                     </ul>
                                 </div>
                                 <div class="footer-payment">
-                                    <img alt="" src="<?php echo base_url('theme');?>/img/payment-new.png">
+                                    <!--<img alt="" src="<?php echo base_url('theme');?>/img/payment-new.png"> -->
                                 </div>
                             </div>
                         </div>
