@@ -122,7 +122,7 @@ class Po_checkout extends CI_Controller {
 
 
 			    $this->db->trans_begin();
-			    $ref_order_id = md5("computer".date("YmdHis")."computer_gen_order_id");
+			    $ref_order_id = md5("xcitehitec".date("YmdHis")."xcitehitec_gen_order_id");
 			    $order_id="";
 			    if($quantity == 0){
 			    	redirect('dealer_po','refresh');

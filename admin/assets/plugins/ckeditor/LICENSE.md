@@ -631,7 +631,7 @@ of these things:
 
     b) Use a suitable shared library mechanism for linking with the
     Library.  A suitable mechanism is one that (1) uses at run time a
-    copy of the library already present on the user's computer system,
+    copy of the library already present on the user's xcitehitec system,
     rather than copying library functions into the executable, and (2)
     will operate properly with a modified version of the library, if
     the user installs one, as long as the modified version is
@@ -844,7 +844,7 @@ Version 1.1
           B. Any new file that contains any part of the Original Code or
           previous Modifications.
 
-     1.10. "Original Code" means Source Code of computer software code
+     1.10. "Original Code" means Source Code of xcitehitec software code
      which is described in the Source Code notice required by Exhibit A as
      Original Code, and which, at the time of its release under this
      License is not already Covered Code governed by this License.
@@ -1170,7 +1170,7 @@ Version 1.1
      OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR
      ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY
      CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL,
-     WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER
+     WORK STOPPAGE, xcitehitec FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER
      COMMERCIAL DAMAGES OR LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN
      INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION OF
      LIABILITY SHALL NOT APPLY TO LIABILITY FOR DEATH OR PERSONAL INJURY
@@ -1182,8 +1182,8 @@ Version 1.1
 10. U.S. GOVERNMENT END USERS.
 
      The Covered Code is a "commercial item," as that term is defined in
-     48 C.F.R. 2.101 (Oct. 1995), consisting of "commercial computer
-     software" and "commercial computer software documentation," as such
+     48 C.F.R. 2.101 (Oct. 1995), consisting of "commercial xcitehitec
+     software" and "commercial xcitehitec software documentation," as such
      terms are used in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48
      C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995),
      all U.S. Government End Users acquire Covered Code with only those

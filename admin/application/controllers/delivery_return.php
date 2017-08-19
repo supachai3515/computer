@@ -52,7 +52,7 @@ class delivery_return extends CI_Controller {
 		$data['header'] = array('title' => 'delivery_return| '.$this->config->item('sitename'),
 								'description' =>  'delivery_return| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -72,7 +72,7 @@ class delivery_return extends CI_Controller {
 		$data['header'] = array('title' => 'delivery_return| '.$this->config->item('sitename'),
 								'description' =>  'delivery_return| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -90,7 +90,7 @@ class delivery_return extends CI_Controller {
 		$data['header'] = array('title' => 'delivery_return| '.$this->config->item('sitename'),
 								'description' =>  'delivery_return| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

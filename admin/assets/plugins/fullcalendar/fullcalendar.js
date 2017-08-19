@@ -1744,7 +1744,7 @@ var GridCoordMap = Class.extend({
 
 	// Queries the grid for the coordinates of all the cells
 	build: function() {
-		this.rowCoords = this.grid.computeRowCoords();
+		this.rowCoords = this.grid.xcitehitecowCoords();
 		this.colCoords = this.grid.computeColCoords();
 		this.computeBounds();
 	},
@@ -2737,7 +2737,7 @@ var Grid = fc.Grid = RowRenderer.extend({
 
 	// Retrieves the element representing the given row
 	getRowEl: function(row) {
-		// subclasses should implement if leveraging the default getCellDayEl() or computeRowCoords()
+		// subclasses should implement if leveraging the default getCellDayEl() or xcitehitecowCoords()
 	},
 
 
@@ -2759,7 +2759,7 @@ var Grid = fc.Grid = RowRenderer.extend({
 
 	// Computes the top/bottom coordinates of all rows.
 	// By default, queries the dimensions of the element provided by getRowEl().
-	computeRowCoords: function() {
+	xcitehitecowCoords: function() {
 		var items = [];
 		var i, el;
 		var item;
@@ -4267,8 +4267,8 @@ var DayGrid = Grid.extend({
 
 
 	// Overrides Grid's method for when row coordinates are computed
-	computeRowCoords: function() {
-		var rowCoords = Grid.prototype.computeRowCoords.call(this); // call the super-method
+	xcitehitecowCoords: function() {
+		var rowCoords = Grid.prototype.xcitehitecowCoords.call(this); // call the super-method
 
 		// hack for extending last row (used by AgendaView)
 		rowCoords[rowCoords.length - 1].bottom += this.bottomCoordPadding;
@@ -4861,7 +4861,7 @@ DayGrid.mixin({
 				rowLevelLimit = levelLimit;
 			}
 			else {
-				rowLevelLimit = this.computeRowLevelLimit(row);
+				rowLevelLimit = this.xcitehitecowLevelLimit(row);
 			}
 
 			if (rowLevelLimit !== false) {
@@ -4874,7 +4874,7 @@ DayGrid.mixin({
 	// Computes the number of levels a row will accomodate without going outside its bounds.
 	// Assumes the row is "rigid" (maintains a constant height regardless of what is inside).
 	// `row` is the row number.
-	computeRowLevelLimit: function(row) {
+	xcitehitecowLevelLimit: function(row) {
 		var rowEl = this.rowEls.eq(row); // the containing "fake" row div
 		var rowHeight = rowEl.height(); // TODO: cache somehow?
 		var trEls = this.rowStructs[row].tbodyEl.children();
@@ -5436,7 +5436,7 @@ var TimeGrid = Grid.extend({
 
 
 	// Computes the top/bottom coordinates of each "snap" rows
-	computeRowCoords: function() {
+	xcitehitecowCoords: function() {
 		var originTop = this.el.offset().top;
 		var items = [];
 		var i;
@@ -6197,12 +6197,12 @@ var View = fc.View = Class.extend({
 
 	// Updates all internal dates to center around the given current date
 	setDate: function(date) {
-		this.setRange(this.computeRange(date));
+		this.setRange(this.xcitehitecange(date));
 	},
 
 
 	// Updates all internal dates for displaying the given range.
-	// Expects all values to be normalized (like what computeRange does).
+	// Expects all values to be normalized (like what xcitehitecange does).
 	setRange: function(range) {
 		$.extend(this, range);
 	},
@@ -6210,7 +6210,7 @@ var View = fc.View = Class.extend({
 
 	// Given a single current date, produce information about what range to display.
 	// Subclasses can override. Must return all properties.
-	computeRange: function(date) {
+	xcitehitecange: function(date) {
 		var intervalDuration = moment.duration(this.opt('duration') || this.constructor.duration || { days: 1 });
 		var intervalUnit = computeIntervalUnit(intervalDuration);
 		var intervalStart = date.clone().startOf(intervalUnit);
@@ -6967,7 +6967,7 @@ var View = fc.View = Class.extend({
 	};
 
 
-	// Returns a moment for the current date, as defined by the client's computer,
+	// Returns a moment for the current date, as defined by the client's xcitehitec,
 	// or overridden by the `now` option.
 	t.getNow = function() {
 		var now = options.now;
@@ -8969,8 +8969,8 @@ var BasicView = fcViews.basic = View.extend({
 
 
 	// Compute the value to feed into setRange. Overrides superclass.
-	computeRange: function(date) {
-		var range = View.prototype.computeRange.call(this, date); // get value from the super-method
+	xcitehitecange: function(date) {
+		var range = View.prototype.xcitehitecange.call(this, date); // get value from the super-method
 
 		// year and month views should be aligned with weeks. this is already done for week
 		if (/year|month/.test(range.intervalUnit)) {
@@ -9257,8 +9257,8 @@ setDefaults({
 var MonthView = fcViews.month = BasicView.extend({
 
 	// Produces information about what range to display
-	computeRange: function(date) {
-		var range = BasicView.prototype.computeRange.call(this, date); // get value from super-method
+	xcitehitecange: function(date) {
+		var range = BasicView.prototype.xcitehitecange.call(this, date); // get value from super-method
 
 		if (this.isFixedWeeks()) {
 			// ensure 6 weeks

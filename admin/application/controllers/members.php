@@ -50,7 +50,7 @@ class Members extends CI_Controller {
 		$data['header'] = array('title' => 'members | '.$this->config->item('sitename'),
 								'description' =>  'members | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -68,7 +68,7 @@ class Members extends CI_Controller {
 		$data['header'] = array('title' => 'members | '.$this->config->item('sitename'),
 								'description' =>  'members | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -84,7 +84,7 @@ class Members extends CI_Controller {
 		$data['header'] = array('title' => 'members | '.$this->config->item('sitename'),
 								'description' =>  'members | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

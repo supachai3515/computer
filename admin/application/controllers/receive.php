@@ -52,7 +52,7 @@ class Receive extends CI_Controller {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -72,7 +72,7 @@ class Receive extends CI_Controller {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -90,7 +90,7 @@ class Receive extends CI_Controller {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 
 		if($data['receive_data']['count_use'] < 1){
 			$this->load->view('template/layout', $data);
@@ -127,7 +127,7 @@ class Receive extends CI_Controller {
 		$data['header'] = array('title' => 'receive| '.$this->config->item('sitename'),
 								'description' =>  'receive| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

@@ -51,7 +51,7 @@ class Productbrand extends CI_Controller {
 		$data['header'] = array('title' => 'productbrand| '.$this->config->item('sitename'),
 								'description' =>  'productbrand| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -71,7 +71,7 @@ class Productbrand extends CI_Controller {
 		$data['header'] = array('title' => 'productbrand| '.$this->config->item('sitename'),
 								'description' =>  'productbrand| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -88,7 +88,7 @@ class Productbrand extends CI_Controller {
 		$data['header'] = array('title' => 'productbrand| '.$this->config->item('sitename'),
 								'description' =>  'productbrand| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

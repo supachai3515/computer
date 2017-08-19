@@ -58,7 +58,7 @@ class Backend_order extends CI_Controller {
 		$data['header'] = array('title' => 'backend order | '.$this->config->item('sitename'),
 								'description' =>  'backend order | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -82,7 +82,7 @@ class Backend_order extends CI_Controller {
 		$data['header'] = array('title' => 'backend order | '.$this->config->item('sitename'),
 								'description' =>  'backend order | '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -121,7 +121,7 @@ class Backend_order extends CI_Controller {
 				$total  = $total + $shipping_charge;
 
 				$this->db->trans_begin();
-				$ref_order_id = md5("computer".date("YmdHis")."computer_gen");
+				$ref_order_id = md5("xcitehitec".date("YmdHis")."xcitehitec_gen");
 				$order_id="";
 				if($quantity == 0){
 					redirect('backend_order/list_temp','refresh');

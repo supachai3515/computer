@@ -45,7 +45,7 @@
                     }(document, 'script', 'facebook-jssdk'));</script>
                         <div class="add-banner-carsuol">
                             <div class="fb-page" data-href="https://www.facebook.com/xcitehiteccom-259231204578178/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                <blockquote cite="https://www.facebook.com/xcitehiteccom-259231204578178/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/xcitehiteccom-259231204578178/">computer.com</a></blockquote>
+                                <blockquote cite="https://www.facebook.com/xcitehiteccom-259231204578178/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/xcitehiteccom-259231204578178/">xcitehitec.com</a></blockquote>
                             </div>
                         </div>
                 </div>

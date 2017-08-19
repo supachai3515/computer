@@ -26,15 +26,15 @@ $config['author'] = "xcitehitec (เอ็กไซ ไฮเทค)";
 $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
 
-$config['url_img'] = "http://computer.wisadev.com/";
-$config['no_url_img'] = "http://computer.wisadev.com/uploads/no_image.jpg";
+$config['url_img'] = "http://xcitehitec.com/";
+$config['no_url_img'] = "http://xcitehitec.com/uploads/no_image.jpg";
 
 $config['email_name'] = "xcitehitec";
-$config['email_owner'] = "xcitehitec@hotmail.com";
-$config['email_noreply'] = "xcitehitec.fix@gmail.com";
-$config['pass_mail_noreply'] = "0917824565";
-$config['weburl'] = "http://computer.wisadev.com/";
-$config['line_id'] = "@computer";
+$config['email_owner'] = "xcitehitec.cs@gmail.com";
+$config['email_noreply'] = "xcitehitec.cs@gmail.com";
+$config['pass_mail_noreply'] = "xc!t3!t3c";
+$config['weburl'] = "http://xcitehitec.com/";
+$config['line_id'] = "@xcitehitec";
 
 $config['payment_transfer'] = '<h4>ธนาคารไทยพาณิชย์</h4>
 								<p>เลขที่บัญชี : <strong>935-229047-8</strong> บริษัท เอ็กไซ ไฮเทค จำกัด</p>

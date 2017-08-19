@@ -50,7 +50,7 @@ class Po_orders extends CI_Controller {
 		$data['header'] = array('title' => 'po_orders| '.$this->config->item('sitename'),
 								'description' =>  'po_orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);	
 	}
 
@@ -70,7 +70,7 @@ class Po_orders extends CI_Controller {
 		$data['header'] = array('title' => 'po_orders| '.$this->config->item('sitename'),
 								'description' =>  'po_orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);	
 
 	}
@@ -90,7 +90,7 @@ class Po_orders extends CI_Controller {
 		$data['header'] = array('title' => 'po_orders| '.$this->config->item('sitename'),
 								'description' =>  'po_orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);	
 
 	}

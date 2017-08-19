@@ -37,8 +37,8 @@
                             <td>
                                 SKU : <span ng-bind="value.sku"></span><br>
                                 NAME : <span ng-bind="value.product_name"></span>
-                            </td>  
-                            <td ng-if="value.is_payment == 0"><button type="button" class="btn btn-info btn-xs"  ng-click="selectOrder(value.credit_note_id,value.credit_note_docno)">เลือก</button></td> 
+                            </td>
+                            <td ng-if="value.is_payment == 0"><button type="button" class="btn btn-info btn-xs"  ng-click="selectOrder(value.credit_note_id,value.credit_note_docno)">เลือก</button></td>
                               <td ng-if="value.is_payment == 1"><span class="label label-default">ใช้อ้างอิงแล้ว</span></td>
                         </tr>
                     </tbody>
@@ -75,7 +75,7 @@
                               <input type="text" class="form-control input-md" ng-model="product_serial.serial_number[value.line_number]"  ng-init="product_serial.serial_number[value.line_number] = value.serial_number " enter>
                           </div>
                           <label class="col-md-4 control-label"><span ng-bind="value.modified_date_order"></span></label>
-              
+
                       </div>
                   </div>
                   <div class="form-group">
@@ -108,7 +108,7 @@
           <div class="form-group">
             <label class="sr-only" for="">สถานะ</label>
              <select id="select_status" name="select_status" class="form-control">
-            <?php 
+            <?php
              switch ($orders_data['order_status_id']) {
                case '1':
                   ?>
@@ -118,8 +118,8 @@
                             <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
                         <?php else: ?>
                             <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
-                        <?php endif ?>  
-                    <?php endif ?>      
+                        <?php endif ?>
+                    <?php endif ?>
                 <?php endforeach ?>
                 <?php
                  break;
@@ -132,8 +132,8 @@
                             <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
                         <?php else: ?>
                             <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
-                        <?php endif ?>  
-                    <?php endif ?>      
+                        <?php endif ?>
+                    <?php endif ?>
                 <?php endforeach ?>
                 <?php
                 break;
@@ -146,8 +146,8 @@
                             <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
                         <?php else: ?>
                             <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
-                        <?php endif ?>  
-                    <?php endif ?>      
+                        <?php endif ?>
+                    <?php endif ?>
                 <?php endforeach ?>
                 <?php
                 break;
@@ -160,8 +160,8 @@
                             <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
                         <?php else: ?>
                             <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
-                        <?php endif ?>  
-                    <?php endif ?>      
+                        <?php endif ?>
+                    <?php endif ?>
                 <?php endforeach ?>
                 <?php
                 break;
@@ -174,8 +174,8 @@
                             <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
                         <?php else: ?>
                             <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
-                        <?php endif ?>  
-                    <?php endif ?>      
+                        <?php endif ?>
+                    <?php endif ?>
                 <?php endforeach ?>
                 <?php
                break;
@@ -188,12 +188,12 @@
                             <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
                         <?php else: ?>
                             <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
-                        <?php endif ?>  
-                    <?php endif ?>      
+                        <?php endif ?>
+                    <?php endif ?>
                 <?php endforeach ?>
                 <?php
                break;
-               
+
                default:
                  ?>
                  <?php foreach ($order_status_list as $status): ?>
@@ -201,7 +201,7 @@
                         <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
                     <?php else: ?>
                         <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
-                    <?php endif ?>          
+                    <?php endif ?>
                 <?php endforeach ?>
                  <?php
                  break;
@@ -213,7 +213,7 @@
             <label class="sr-only" for="">description</label>
             <input type="text" class="form-control" id="description" name="description" placeholder="รายละเอียด">
           </div>
-      
+
           <button type="submit" class="btn btn-primary">เปลี่ยน</button>
         </form>
 
@@ -260,11 +260,11 @@
                                  <strong>เลขที่ผุ้เสียภาษี : </strong><span><?php echo $orders_data['tax_id']; ?></span><br/>
                                  <strong>บริษัท : </strong><span><?php echo $orders_data['tax_company']; ?></span><br/>
                                 <strong>ที่อยู่ : </strong><span><?php echo $orders_data['tax_address']; ?></span><br/>
-                          
+
                             <?php endif ?>
-                             
+
                           </td>
-                             
+
                           <td>
                                <strong ng-bind="<?php echo $orders_data['total'];?> | currency:'฿':0"></strong>
                           </td>
@@ -279,7 +279,7 @@
               <div class="panel-body">
                 <form action="<?php echo base_url('orders/update_address/'.$orders_data['id']); ?>" method="POST"  role="form">
                   <legend>ที่อยู่จัดส่ง</legend>
-                
+
                   <div class="form-group">
                     <label for="">ที่อยู่</label>
                     <input type="text" class="form-control" name="address" placeholder="ที่อยู่" value="<?php echo $orders_data['address']; ?>">
@@ -296,7 +296,7 @@
                     <label for="">เบอร์โทร</label>
                     <input type="text" class="form-control" name="tel" placeholder="tel" value="<?php echo $orders_data['tel']; ?>">
                   </div>
-                  
+
                   <legend>ที่อยู่ออกใบกำกับภาษี</legend>
                   <div class="checkbox">
                     <label>
@@ -376,7 +376,7 @@
                   <td colspan="5" class="text-right"><strong>รวมทั้งหมด</strong></td>
                   <td class="text-right"><ins class="text-right"><?php echo  $orders_data['total'] ?></ins></td>
                 </tr>
-                
+
               </tbody>
             </table>
               <?php if ($orders_data['order_status_id'] >= "2" && $orders_data['order_status_id'] < "5"): ?>
@@ -394,7 +394,7 @@
                 <?php foreach ($order_status_list as $status): ?>
                     <?php if ($status['id'] == "4"): ?>
                         <option value="<?php echo $status['id']; ?>" selected><?php echo $status['name']; ?></option>
-                    <?php endif ?>          
+                    <?php endif ?>
                 <?php endforeach ?>
             </select>
           </div>
@@ -403,72 +403,37 @@
             <input type="text" class="form-control" id="description" name="description" placeholder="รายละเอียด" >
           </div>
 
-          
+
               <button type="submit" class="btn btn-primary">ส่งรหัส tracking</button>
             </form>
 
-                
+
               <?php endif ?>
           </div>
             </div>
           </div>
 
-         
+
             <div class="well">
 
                <form class="form-horizontal" method="POST" action="<?php echo base_url('orders/save_slip/'.$orders_data['id']);?>" accept-charset="utf-8" enctype="multipart/form-data">
                <div class="form-group">
                   <legend>การชำระเงิน</legend>
                 </div>
-                 <!-- Text input-->
-                  <div class="form-group">
-                      <label class="col-md-3 control-label" for="credit_note_id">อ้างอิงใบลดหนี้</label>
-                      <div class="col-md-4">
-                          <div class="input-group">
-                              <input id="credit_note_id" name="credit_note_id" type="text" placeholder="เลขที่ใบลดหนี้" class="form-control input-md" 
-                              ng-model="credit_note_id"  ng-init="credit_note_id = items.credit_note_id" required="" readonly="true">
-                              <span class="input-group-addon"> <button type="button" ng-click="open_credit()">เลือกใบลดหนี้</i></button></span>
-                          </div>
-                      </div>
-                      <div class="col-md-4"></div> <span ng-model="credit_note_docno" ng-bind="credit_note_docno"  ng-init="credit_note_docno = items.credit_note_docno"> </span>
-                  </div>
+
                  <input hidden="true"  value="<?php echo $orders_data['member_id']; ?>"  name="member_id" >
+                 <input type="hidden" name="credit_note_id" id="credit_note_id" value="">
                 <div class="form-group">
+
                     <label class="col-md-3 control-label" for="textinput">เลือกธนาคาร  *</label>
                     <div class="col-md-6">
                       <select  name="bank_name"  class="form-control" required="required">
-
-                          <?php if ($orders_data['bank_name'] == "ธนาคารกรุงเทพ"): ?>
-                            <option value="ธนาคารกรุงเทพ" selected>ธนาคารกรุงเทพ</option>
-                          <?php else: ?>
-                            <option value="ธนาคารกรุงเทพ">ธนาคารกรุงเทพ</option>
-                          <?php endif ?>
-
-                          <?php if ($orders_data['bank_name'] == "ธนาคารกรุงไทย"): ?>
-                            <option value="ธนาคารกรุงไทย" selected>ธนาคารกรุงไทย</option>
-                          <?php else: ?>
-                            <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
-                          <?php endif ?>
 
                           <?php if ($orders_data['bank_name'] == "ธนาคารไทยพาณิชย์"): ?>
                             <option value="ธนาคารไทยพาณิชย์" selected>ธนาคารไทยพาณิชย์</option>
                           <?php else: ?>
                             <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
                           <?php endif ?>
-
-                          <?php if ($orders_data['bank_name'] == "ธนาคารกสิกรไทย"): ?>
-                            <option value="ธนาคารกสิกรไทย" selected>ธนาคารกสิกรไทย</option>
-                          <?php else: ?>
-                            <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
-                          <?php endif ?>
-
-
-                          <?php if ($orders_data['bank_name'] == "ใบลดหนี้"): ?>
-                            <option value="ใบลดหนี้" selected>ใบลดหนี้</option>
-                          <?php else: ?>
-                            <option value="ใบลดหนี้">ใบลดหนี้</option>
-                          <?php endif ?>
-
                       </select>
                      </div>
                 </div>
@@ -491,7 +456,7 @@
                     </div>
                    </div>
                   </div>
-                        
+
                 <div class="form-group">
                 <label class="col-md-3 control-label" for="textinput">เวลาที่โอน  *</label>
                 <div class="col-md-6">
@@ -501,8 +466,8 @@
                     </div>
                  </div>
                   </div>
-                         
-                       
+
+
                   <div class="form-group">
                       <label class="col-md-3 control-label" for="textinput">หมายเหตุ</label>
                       <div class="col-md-6">
@@ -511,21 +476,21 @@
                     </div>
 
 
-                <!-- File Button --> 
+                <!-- File Button -->
                   <div class="form-group">
                     <label class="col-md-3 control-label" for="image_field">รูปสำหรับลูกค้า</label>
                     <div class="col-md-6">
                       <p><input id="image_field" name="image_field" class="file-loading" type="file" data-show-upload="false" data-min-file-count="1"></p>
-                      
+
                     </div>
                   </div>
 
-                  <!-- File Button --> 
+                  <!-- File Button -->
                   <div class="form-group">
                     <label class="col-md-3 control-label" for="image_field1">รูปสำหรับเจ้าหน้าที่</label>
                     <div class="col-md-6">
                       <p><input id="image_field1" name="image_field1" class="file-loading" type="file" data-show-upload="false" data-min-file-count="1"></p>
-                      
+
                     </div>
                   </div>
 
@@ -537,7 +502,7 @@
             </form>
 
             </div>
-        
+
           </div>
 
 
@@ -551,7 +516,7 @@
                   <a href="<?php echo base_url('orders/invoice/'.$orders_data['id']); ?>"><button type="button" class="btn btn-warning">ออกใบกำกับภาษี</button></a>
                 <?php endif ?>
 
-              
+
             <?php endif ?>
 
             <h4 class="text-info">สถานะสินค้า</h4>
@@ -573,16 +538,16 @@
                     <th><?php echo date("d-m-Y H:i", strtotime($value['create_date']));?></th>
                   </tr>
                 <?php endforeach ?>
-                  
+
                 </tbody>
               </table>
             </div>
-              
+
             </div>
 
           </div>
         </div>
-        
+
     </div>
     <!-- /.container-fluid box -->
 </div>

@@ -53,7 +53,7 @@ class Credit_note extends CI_Controller {
 		$data['header'] = array('title' => 'credit_note| '.$this->config->item('sitename'),
 								'description' =>  'credit_note| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -73,7 +73,7 @@ class Credit_note extends CI_Controller {
 		$data['header'] = array('title' => 'credit_note| '.$this->config->item('sitename'),
 								'description' =>  'credit_note| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -92,7 +92,7 @@ class Credit_note extends CI_Controller {
 		$data['header'] = array('title' => 'credit_note| '.$this->config->item('sitename'),
 								'description' =>  'credit_note| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

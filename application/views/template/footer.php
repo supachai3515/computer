@@ -7,7 +7,7 @@
                         <div class="col-sm-3 col-lg-3 col-md-3">
                             <div class="static-book">
                                 <div class="footer-title">
-                                    <h2>computer</h2>
+                                    <h2>xcitehitec</h2>
                                 </div>
                                 <div class="footer-menu">
                                     <ul>

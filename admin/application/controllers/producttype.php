@@ -52,7 +52,7 @@ class Producttype extends CI_Controller {
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
 								'description' =>  'producttype| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -72,7 +72,7 @@ class Producttype extends CI_Controller {
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
 								'description' =>  'producttype| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -90,7 +90,7 @@ class Producttype extends CI_Controller {
 		$data['header'] = array('title' => 'producttype| '.$this->config->item('sitename'),
 								'description' =>  'producttype| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

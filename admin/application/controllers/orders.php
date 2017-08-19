@@ -40,7 +40,7 @@ class Orders extends CI_Controller {
 		$config['last_tag_open'] = "<li>";
 		$config['last_tagl_close'] = "</li>";
 
-        $this->pagination->initialize($config);
+    $this->pagination->initialize($config);
 		$data['orders_list'] = $this->orders_model->get_orders($page, $config['per_page']);
 		$data['order_status_list'] = $this->orders_model->get_order_status();
 		$data['links_pagination'] = $this->pagination->create_links();
@@ -53,7 +53,7 @@ class Orders extends CI_Controller {
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -73,7 +73,7 @@ class Orders extends CI_Controller {
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -94,7 +94,7 @@ class Orders extends CI_Controller {
 		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
 								'description' =>  'orders| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

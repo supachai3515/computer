@@ -63,7 +63,7 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Small',			element: 'small' },
 	{ name: 'Typewriter',		element: 'tt' },
 
-	{ name: 'Computer Code',	element: 'code' },
+	{ name: 'xcitehitec Code',	element: 'code' },
 	{ name: 'Keyboard Phrase',	element: 'kbd' },
 	{ name: 'Sample Text',		element: 'samp' },
 	{ name: 'Variable',			element: 'var' },

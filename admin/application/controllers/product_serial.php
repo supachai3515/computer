@@ -52,7 +52,7 @@ class Product_serial extends CI_Controller {
 		$data['header'] = array('title' => 'product_serial| '.$this->config->item('sitename'),
 								'description' =>  'product_serial| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -71,7 +71,7 @@ class Product_serial extends CI_Controller {
 		$data['header'] = array('title' => 'product_serial| '.$this->config->item('sitename'),
 								'description' =>  'product_serial| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

@@ -54,7 +54,7 @@ class special_county extends CI_Controller {
 		$data['header'] = array('title' => 'special_county | '.$this->config->item('sitename'),
 								'description' =>  'special_county| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -76,7 +76,7 @@ class special_county extends CI_Controller {
 		$data['header'] = array('title' => 'special_county| '.$this->config->item('sitename'),
 								'description' =>  'special_county| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -97,7 +97,7 @@ class special_county extends CI_Controller {
 		$data['header'] = array('title' => 'special_county | '.$this->config->item('sitename'),
 								'description' =>  'special_county| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}

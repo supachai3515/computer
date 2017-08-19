@@ -54,7 +54,7 @@ class Purchase_order extends CI_Controller {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 	}
 
@@ -73,7 +73,7 @@ class Purchase_order extends CI_Controller {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 
 	$this->load->view('purchase_order/purchase_order_info_view', $data);
 	}
@@ -94,7 +94,7 @@ class Purchase_order extends CI_Controller {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 		$this->load->view('template/layout', $data);
 
 	}
@@ -112,7 +112,7 @@ class Purchase_order extends CI_Controller {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 
 			$this->load->view('template/layout', $data);
 	}
@@ -146,7 +146,7 @@ class Purchase_order extends CI_Controller {
 		$data['header'] = array('title' => 'purchase_order| '.$this->config->item('sitename'),
 								'description' =>  'purchase_order| '.$this->config->item('tagline'),
 								'author' => $this->config->item('author'),
-								'keyword' =>  'computer');
+								'keyword' =>  'xcitehitec');
 
 			$this->load->view('template/layout', $data);
 
