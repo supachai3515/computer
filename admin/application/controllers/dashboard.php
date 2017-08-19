@@ -14,7 +14,7 @@ class Dashboard extends CI_Controller {
 	{
 		$this->is_logged_in();
 		$data['menus_list'] = $this->initdata_model->get_menu();
-        $data['menu_id'] ='8';
+    $data['menu_id'] ='8';
 		$data['content'] = 'dashboard';
 		$data['header'] = array('title' => 'Dashboard | '.$this->config->item('sitename'),
 								'description' =>  'Dashboard | '.$this->config->item('tagline'),
@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller {
 
 		$data['get_order_status'] = $this->dasboard_model->get_order_status();
 		$data['get_orders'] = $this->dasboard_model->get_orders();
-		$data['get_orders_today'] = $this->dasboard_model->get_orders_today(); 
+		$data['get_orders_today'] = $this->dasboard_model->get_orders_today();
 
 		$this->load->view('template/layout', $data);
 	}

@@ -5,7 +5,7 @@
 
     <form action="signin" method="POST" role="form">
             <div class="form-login">
-            <h4>Login <?php echo $this->config->item('sitename'); ?></h4>
+            <h4>Login <?php echo $this->config->item('address_own'); ?></h4>
             <?php 
                   if($this->session->flashdata('msg') != ''){
                       echo '
