@@ -43,7 +43,7 @@
                                     <ul>
                                        <li><i class="fa fa-map-marker"></i> บริษัท เอ็กไซ ไฮเทค จำกัด<br>
                                        ชั้น 3 ตึกคอมโฆษะขอนแก่น อำเภอเมือง ขอนแก่น 40000 </li>
-                                       <li><i class="fa fa-phone"></i> Mobile: 087-880964 , 043-389438</li>
+                                       <li><i class="fa fa-phone"></i> Mobile: 087-8809644 , 043-389438</li>
                                        <li><i class="fa fa-comment"></i> LINE : @xcitehitec</li>
                                     </ul>
                                 </div>

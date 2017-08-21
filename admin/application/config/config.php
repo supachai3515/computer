@@ -25,12 +25,11 @@ $config['tagline'] = "อะไหล่แมคบุ๊ค อะไหล่
 $config['author'] = "xcitehitec (เอ็กไซ ไฮเทค)";
 $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
-
 $config['url_img'] = "http://xcitehitec.com/";
 $config['no_url_img'] = "http://xcitehitec.com/uploads/no_image.jpg";
 
 $config['email_name'] = "xcitehitec";
-$config['email_owner'] = "xcitehitec.cs@gmail.com";
+$config['email_owner'] = "xcitehitec.trade@gmail.com";
 $config['email_noreply'] = "xcitehitec.cs@gmail.com";
 $config['pass_mail_noreply'] = "xc!t3!t3c";
 $config['weburl'] = "http://xcitehitec.com/";
@@ -40,11 +39,10 @@ $config['payment_transfer'] = '<h4>ธนาคารไทยพาณิชย
 								<p>เลขที่บัญชี : <strong>935-229047-8</strong> บริษัท เอ็กไซ ไฮเทค จำกัด</p>
 								';
 
-
 $config['address_own'] = '<h4>บริษัท เอ็กไซ ไฮเทค จำกัด</h4>
-															ห้อง 3R036-037 ชั้น 3 ตึกคอมโฆษะขอนแก่น ถนนศรีจันทร์ ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000<br>
-															โทร 02-7313565<br>
-															<strong>เลขประจำตัวผู้เสียภาษี xxxxxxxxxxxxx</strong>';
+															ห้อง ห้อง 3r036-037ชั้น 3 ตึกคอมโฆษะขอนแก่น ถนนศรีจันทร์ ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000 <br>
+															โทร โทร 043-389438/087-8809644<br>
+															<strong>เลขประจำตัวผู้เสียภาษี 0105559113718</strong>';
 /*
 |--------------------------------------------------------------------------
 | Index File

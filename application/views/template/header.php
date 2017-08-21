@@ -57,7 +57,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-4">
                             <div class="currency">
                                 <span class="menu-lavel">
-                                    <i class="fa fa-phone"></i> 087-880964
+                                    <i class="fa fa-phone"></i> 087-8809644
                                 </span>
                             </div>
                         </div>
