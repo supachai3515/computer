@@ -43,10 +43,7 @@
                         xcitehitec (เอ็กไซ ไฮเทค)
                     </h2>
                 </div>
-                <img src="<?php echo base_url('theme');?>/img/xc_ct.jpg"  class="img-responsive" alt=""><br>
                 <img src="<?php echo base_url('theme');?>/img/xc_ct1.jpg"  class="img-responsive" alt="">
-
-
             </div>
             </div>
             </div>
