@@ -48,10 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'computer';
+$db['default']['username'] = 'admin_xcitehitec';
+$db['default']['password'] = 'LJm2EdyH9W';
+$db['default']['database'] = 'admin_xcitehitec';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -63,6 +64,7 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
 
 
 
