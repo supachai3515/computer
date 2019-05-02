@@ -14,7 +14,7 @@
             <div class="col-sm-6 col-lg-6 col-md-6">
                 <div class="our-team">
                     <h2 class="sub-section-title">
-                        xcitehitec (เอ็กไซ ไฮเทค)
+                        xcitehitec (เอ็กไซ ไฮเทค) สาขา ตึกคอมโฆษะขอนแก่น
                     </h2>
                     <address>
                         <p><i class="fa fa-map-marker"></i>  บริษัท เอ็กไซ ไฮเทค จำกัด <br>ห้อง 3R036-037 ชั้น 3 ตึกคอมโฆษะขอนแก่น ถนนศรีจันทร์  ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000</p>
@@ -22,6 +22,15 @@
                         <p><i class="fa fa-envelope-o"></i> Email: <?php echo $this->config->item('email_owner') ?></p>
                         <p><i class="fa fa-comment"></i> Line Id: <a href="http://line.me/ti/p/%40xcitehitec" target="_blank">@xcitehitec</a></p>
                     </address>
+                </div>
+                <div class="our-team">
+                    <h2 class="sub-section-title">
+                    สำนักงานใหญ่ xcitehitec (เอ็กไซ ไฮเทค)
+                    </h2>
+                    <address>
+                        <p><i class="fa fa-map-marker"></i>  บริษัท เอ็กไซ ไฮเทค จำกัด <br>เลขที่ 1104/260 หมู่บ้านโนเบิลคิวบ์ ถนนพัฒนาการ เขต สวนหลวง แขวง สวนหลวง จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10250</p>
+                        <p><i class="fa fa-phone"></i> Mobile: 061-742-8555 , TEL. 02-1151459 , แฟกซ์ : 02-187-2829</p>
+                      </address>
                 </div>
                   <div id="fb-root"></div>
                     <script>(function(d, s, id) {
