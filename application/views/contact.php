@@ -10,39 +10,41 @@
             </div>
             <div style="padding-top: 20px;"></div>
             <div class="row">
-
             <div class="col-sm-6 col-lg-6 col-md-6">
                 <div class="our-team">
                     <h2 class="sub-section-title">
-                        xcitehitec (เอ็กไซ ไฮเทค) สาขา ตึกคอมโฆษะขอนแก่น
+                        xcitehitec (เอ็กไซ ไฮเทค) สาขา สำนักงานใหญ่
                     </h2>
                     <address>
-                        <p><i class="fa fa-map-marker"></i>  บริษัท เอ็กไซ ไฮเทค จำกัด <br>ห้อง 3R036-037 ชั้น 3 ตึกคอมโฆษะขอนแก่น ถนนศรีจันทร์  ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000</p>
-                        <p><i class="fa fa-phone"></i> Mobile: 087-8809644 , TEL. 043-389438</p>
-                        <p><i class="fa fa-envelope-o"></i> Email: <?php echo $this->config->item('email_owner') ?></p>
-                        <p><i class="fa fa-comment"></i> Line Id: <a href="http://line.me/ti/p/%40xcitehitec" target="_blank">@xcitehitec</a></p>
+                        <p><i class="fa fa-map-marker"></i>  บริษัท เอ็กไซ ไฮเทค จำกัด <br>เลขที่ 1104/260 หมู่บ้านโนเบิลคิวบ์ ถนนพัฒนาการ เขต สวนหลวง แขวง สวนหลวง จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10250</p>
+                        <p><i class="fa fa-phone"></i> Mobile: 0874937555, 0832904440, TEL. 02-1151459  แฟกซ์: 02-187-2829</p>
+                        <p><i class="fa fa-comment"></i> Line : <a href="http://line.me/ti/p/%40xcite" target="_blank">@xcite</a></p>
+                        <p>เวลาทำการ ทุกวันเวลา 9.00  - 18.30  จ-ส</p>
                     </address>
                 </div>
                 <div class="our-team">
                     <h2 class="sub-section-title">
-                    สำนักงานใหญ่ xcitehitec (เอ็กไซ ไฮเทค)
+                     xcitehitec (เอ็กไซ ไฮเทค) สาขาตึกคอมขอนแก่น ชั้น 3
                     </h2>
                     <address>
-                        <p><i class="fa fa-map-marker"></i>  บริษัท เอ็กไซ ไฮเทค จำกัด <br>เลขที่ 1104/260 หมู่บ้านโนเบิลคิวบ์ ถนนพัฒนาการ เขต สวนหลวง แขวง สวนหลวง จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10250</p>
-                        <p><i class="fa fa-phone"></i> Mobile: 061-742-8555 , TEL. 02-1151459 , แฟกซ์ : 02-187-2829</p>
+                        <p><i class="fa fa-map-marker"></i> บริษัท เอ็กไซ ไฮเทค จำกัด <br>เลขที่ 250/1 ถนนศรีจันทร์ ต.ในเมือง อ.เมืองขอนแก่น จ.ขอนแก่น 40000</p>
+                        <p><i class="fa fa-phone"></i> 0885571668, 0832904440, 0878809644  แฟกซ์: 043-389-438</p>
+                        <p>เวลาทำการ 10.15-19.30 เปิดบริการทุกวัน</p>
                       </address>
                 </div>
-                  <div id="fb-root"></div>
+
+                <div id="fb-root"></div>
+                     <div id="fb-root"></div>
                     <script>(function(d, s, id) {
                       var js, fjs = d.getElementsByTagName(s)[0];
                       if (d.getElementById(id)) return;
                       js = d.createElement(s); js.id = id;
-                      js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.6&appId=615663091936505";
+                      js.src = "https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v3.3&appId=416257669204927&autoLogAppEvents=1";
                       fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));</script>
                         <div class="add-banner-carsuol">
-                            <div class="fb-page" data-href="https://www.facebook.com/xcitehiteccom-259231204578178/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                <blockquote cite="https://www.facebook.com/xcitehiteccom-259231204578178/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/xcitehiteccom-259231204578178/">xcitehitec.com</a></blockquote>
+                            <div class="fb-page" data-href="https://www.facebook.com/xcitehitec//" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/xcitehitec//" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/xcitehitec//">xcitehitec.com</a></blockquote>
                             </div>
                         </div>
             </div>

@@ -32,19 +32,17 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="col-sm-3 col-lg-3 col-md-3">
                              <div class="store-information-area">
                                 <div class="footer-title">
-                                    <h2>ข้อมูลของร้าน</h2>
+                                    <h2>ข้อมูลบริษัท</h2>
                                 </div>
                                 <div class="store-content">
                                     <ul>
                                        <li><i class="fa fa-map-marker"></i> บริษัท เอ็กไซ ไฮเทค จำกัด<br>
-                                       ชั้น 3 ตึกคอมโฆษะขอนแก่น อำเภอเมือง ขอนแก่น 40000 </li>
-                                       <li><i class="fa fa-phone"></i> Mobile: 087-8809644 , 043-389438</li>
-                                       <li><i class="fa fa-comment"></i> LINE : @xcitehitec</li>
+                                       เลขที่ 1104/260 หมู่บ้านโนเบิลคิวบ์ ถนนพัฒนาการ เขต สวนหลวง แขวง สวนหลวง จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10250</li>
+                                       <li><i class="fa fa-phone"></i> 0874937555 , 02-1151459 แฟกซ์: 02-187-2829</li>
+                                       <li><i class="fa fa-comment"></i> LINE-ID : 0874937555</li>
                                     </ul>
                                 </div>
                             </div>
@@ -56,7 +54,7 @@
                                 </div>
                                 <div class="store-content">
                                     <ul>
-                                        <li><i class="fa fa-clock-o"></i> ทุกวัน จันทร์ - เสาร์ 9.30 - 19.00</li>
+                                        <li><i class="fa fa-clock-o"></i> เวลาทำการ 9.00 - 18.30 จ-ส</li>
                                     </ul>
                                 </div>
                                 <div class="footer-payment">

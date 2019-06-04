@@ -13,7 +13,7 @@
     <meta name="description" content="<?php echo $header['description'];?>">
     <meta name="keyword" content="<?php echo $header['keyword'];?>" />
     <meta name="author" content="<?php echo $header['author'];?>">
-    <meta property="fb:app_id" content="204742923362459"/>
+    <meta property="fb:app_id" content="416257669204927"/>
     <title><?php echo $header['title']; ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('theme');?>/img/favicon-2.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600" type="text/css" media="all" />
@@ -68,8 +68,7 @@
                                 <nav>
                                     <ul>
                                         <li class="current"><a href="<?php echo base_url('dealer')?>"><i class="fa fa-user" aria-hidden="true"></i> Dealer</a></li>
-                                        <li><a href="https://www.facebook.com/xcitehiteccom-259231204578178/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> FB</a></li>
-                                        <li><a href="http://line.me/ti/p/%40xcitehitec">LINE : @xcitehitec</a></li>
+                                        <li><a href="https://www.facebook.com/xcitehitec/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> FB</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -196,6 +195,8 @@
                                     </li>
                                     <li><a href="<?php echo base_url('payment')?>">แจ้งชำระเงิน</a></li>
                                     <li><a href="<?php echo base_url('tracking')?>">ติดตามสินค้า</a></li>
+                                    <li><a href="<?php echo base_url('faq')?>">ถาม-ตอบ</a></li>
+                                    <li><a href="<?php echo base_url('content')?>">บทความ</a></li>
                                     <li><a href="<?php echo base_url('contact')?>">ติดต่อเรา</a></li>
                                 </ul>
                             </nav>
@@ -224,6 +225,8 @@
                                     </li>
                                     <li><a href="<?php echo base_url('payment')?>">แจ้งชำระเงิน</a></li>
                                     <li><a href="<?php echo base_url('tracking')?>">ติดตามสินค้า</a></li>
+                                    <li><a href="<?php echo base_url('faq')?>">ถาม-ตอบ</a></li>
+                                    <li><a href="<?php echo base_url('content')?>">บทความ</a></li>
                                     <li><a href="<?php echo base_url('contact')?>">ติดต่อเรา</a></li>
 
                                 </ul>

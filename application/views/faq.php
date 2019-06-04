@@ -31,21 +31,15 @@
                             สินค้าทุกชิ้นมีการรับประกัน
                         </li>
                     </ul>
-                    Line : <a href="http://line.me/ti/p/%40xcitehitec" target="_blank">@xcitehitec</a><br>
+                    Line : <a href="http://line.me/ti/p/%40xcite" target="_blank">@xcite</a><br>
 
                     <div style="padding-top: 20px;"></div>
 
-                     <div id="fb-root"></div>
-                    <script>(function(d, s, id) {
-                      var js, fjs = d.getElementsByTagName(s)[0];
-                      if (d.getElementById(id)) return;
-                      js = d.createElement(s); js.id = id;
-                      js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.6&appId=615663091936505";
-                      fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
+                    <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v3.3&appId=416257669204927&autoLogAppEvents=1"></script>
                         <div class="add-banner-carsuol">
-                            <div class="fb-page" data-href="https://www.facebook.com/xcitehiteccom-259231204578178/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                <blockquote cite="https://www.facebook.com/xcitehiteccom-259231204578178/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/xcitehiteccom-259231204578178/">xcitehitec.com</a></blockquote>
+                            <div class="fb-page" data-href="https://www.facebook.com/xcitehitec/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/xcitehitec/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/xcitehitec/">xcitehitec.com</a></blockquote>
                             </div>
                         </div>
                 </div>
@@ -55,7 +49,7 @@
                     <h2 class="sub-section-title">
                         ติดต่อทางร้าน
                     </h2>
-                    <div class="fb-comments" data-href="http://<?php echo $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; ?>"  data-order-by="social" data-numposts="20" data-width="100%"></div>
+                    <div class="fb-comments" data-href="http://<?php echo $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; ?>" data-width="100%" data-numposts="20"></div>
                     </div>
                 </div>
             </div>

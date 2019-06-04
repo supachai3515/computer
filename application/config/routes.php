@@ -57,8 +57,7 @@ $route['login'] = "login";
 $route['fixmac'] = "fixmac/index";
 $route['fixmac/(:any)'] = "fixmac/index/$1";
 $route['searchfix'] = "fixmac/search";  
-
-
+ 
 $route['default_controller'] = 'home';
 $route['404_override'] = 'notfound';
 $route['translate_uri_dashes'] = TRUE;

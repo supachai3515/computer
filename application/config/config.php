@@ -30,20 +30,20 @@ $config['url_img'] = "https://xcitehitec.com/";
 $config['no_url_img'] = "https://xcitehitec.com/uploads/no_image.jpg";
 
 $config['email_name'] = "xcitehitec";
-$config['email_owner'] = "xcitehitec.trade@gmail.com";
+$config['email_owner'] = "sila@xcitehightech.com";
 $config['email_noreply'] = "xcitehitec.cs@gmail.com";
 $config['pass_mail_noreply'] = "xc!t3!t3c";
 $config['weburl'] = "https://xcitehitec.com/";
-$config['line_id'] = "@xcitehitec";
+$config['line_id'] = "0874937555";
 
-$config['payment_transfer'] = '<h4>ธนาคารไทยพาณิชย์</h4>
-								<p>เลขที่บัญชี : <strong>935-229047-8</strong> บริษัท เอ็กไซ ไฮเทค จำกัด</p>
+$config['payment_transfer'] = '<h4>กสิกร</h4>
+								<p>เลขที่บัญชี : <strong>032-8-97823-7</strong> บริษัท เอ็กไซ ไฮเทค จำกัด</p>
 								';
 
 $config['address_own'] = '<h4>บริษัท เอ็กไซ ไฮเทค จำกัด</h4>
-															ห้อง ห้อง 3r036-037ชั้น 3 ตึกคอมโฆษะขอนแก่น ถนนศรีจันทร์ ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000 <br>
-															โทร โทร 043-389438/087-8809644<br>
-															<strong>เลขประจำตัวผู้เสียภาษี 0105559113718</strong>';
+สำนักงานใหญ่  ที่อยู่ เลขที่ 1104/260 หมู่บ้านโนเบิลคิวบ์ ถนนพัฒนาการ เขต สวนหลวง แขวง สวนหลวง จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10250<br>
+เบอร์ 02-1151459, 0874937555 แฟกซ์: 02-187-2829<br>
+<strong>เลขประจำตัวผู้เสียภาษี 0105559113718</strong>';
 /*
 |--------------------------------------------------------------------------
 | Index File
