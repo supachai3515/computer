@@ -18,8 +18,8 @@
                     <option value="0">ทั้งหมด</option>
                     <option value="ธนาคารกรุงเทพ" <?php if($resultpost['list_category'] == 'ธนาคารกรุงเทพ'){echo "selected";}?>>ธนาคารกรุงเทพ</option>
                     <option value="ธนาคารกรุงไทย" <?php if($resultpost['list_category'] == 'ธนาคารกรุงไทย'){echo "selected";}?>>ธนาคารกรุงไทย</option>
-                    <option value="ธนาคารไทยพาณิชย์" <?php if($resultpost['list_category'] == 'ธนาคารไทยพาณิชย์'){echo "selected";}?>>ธนาคารไทยพาณิชย์</option>
                     <option value="ธนาคารกสิกรไทย" <?php if($resultpost['list_category'] == 'ธนาคารกสิกรไทย'){echo "selected";}?>>ธนาคารกสิกรไทย</option>
+                    <option value="ธนาคารกสิกรไทยไทย" <?php if($resultpost['list_category'] == 'ธนาคารกสิกรไทยไทย'){echo "selected";}?>>ธนาคารกสิกรไทยไทย</option>
                     <option value="ใบลดหนี้" <?php if($resultpost['list_category'] == 'ใบลดหนี้'){echo "selected";}?>>ใบลดหนี้</option>
                 </select>
             </div>

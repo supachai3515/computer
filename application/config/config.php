@@ -36,7 +36,7 @@ $config['pass_mail_noreply'] = "xc!t3!t3c";
 $config['weburl'] = "https://xcitehitec.com/";
 $config['line_id'] = "0874937555";
 
-$config['payment_transfer'] = '<h4>กสิกร</h4>
+$config['payment_transfer'] = '<h4>กสิกรไทย</h4>
 								<p>เลขที่บัญชี : <strong>032-8-97823-7</strong> บริษัท เอ็กไซ ไฮเทค จำกัด</p>
 								';
 

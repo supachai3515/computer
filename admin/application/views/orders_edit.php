@@ -429,10 +429,10 @@
                     <div class="col-md-6">
                       <select  name="bank_name"  class="form-control" required="required">
 
-                          <?php if ($orders_data['bank_name'] == "ธนาคารไทยพาณิชย์"): ?>
-                            <option value="ธนาคารไทยพาณิชย์" selected>ธนาคารไทยพาณิชย์</option>
+                          <?php if ($orders_data['bank_name'] == "ธนาคารกสิกรไทย"): ?>
+                            <option value="ธนาคารกสิกรไทย" selected>ธนาคารกสิกรไทย</option>
                           <?php else: ?>
-                            <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
+                            <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
                           <?php endif ?>
                       </select>
                      </div>

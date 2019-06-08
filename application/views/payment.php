@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label for="textinput">เลือกธนาคาร</label>
                             <select  name="txtBank" id="inputBank" class="form-control" required="required">
-                                <option value="ธนาคารไทยพาณิชย์">กสิกร</option>
+                                <option value="ธนาคารกสิกรไทย">กสิกรไทย</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -89,7 +89,7 @@
                             <img src="<?php echo base_url('theme'); ?>/img/kban.jpg" class="img-responsive img-rounded" alt="Image">
                         </div>
                         <div class="col-sm-9">
-                            <h4>กสิกร</h4>
+                            <h4>กสิกรไทย</h4>
                             <p>เลขที่บัญชี : 032-8-97823-7
                                 <br> ชื่อบัญชี : บริษัท เอ็กไซ ไฮเทค จำกัด
                                 <br>
