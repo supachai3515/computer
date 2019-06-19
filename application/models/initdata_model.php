@@ -47,8 +47,8 @@ class Initdata_model extends CI_Model {
 
 		$sql = "SELECT pt.id, pt.name, pt.slug ,pt.parenttype_id ,COUNT(p.id) count_product
 				FROM product_type  pt
-						LEFT JOIN products p ON p.product_type_id = pt.id
-						WHERE pt.is_active = 1   AND pt.parenttype_id != 0
+						LEFT JOIN products p ON p.product_type_id = pt.id AND p.is_active = 1
+						WHERE pt.is_active = 1   AND pt.parenttype_id != 0  
 				GROUP BY  pt.id, pt.name ,pt.slug
 						ORDER BY pt.name";
 		$result = $this->db->query($sql);
